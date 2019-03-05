@@ -1,0 +1,83 @@
+{
+  "sedan": {
+    "img": {
+      "small": "url",
+      "medium": "url",
+      "large": "url"
+    },
+    "name": "Sedan",
+    "price": 4000
+  },
+  "truck": {
+    "img": {
+      "small": "url",
+      "medium": "url",
+      "large": "url"
+    },
+    "name": "Truck",
+    "price": 8000
+  },
+  "sportsCar": {
+    "img": {
+      "small": "url",
+      "medium": "url",
+      "large": "url"
+    },
+    "name": "Sports Car",
+    "price": 15000
+  },
+  "suv": {
+    "img": {
+      "small": "url",
+      "medium": "url",
+      "large": "url"
+    },
+    "name": "SUV",
+    "price": 18000
+  },
+  "stationWagon": {
+    "img": {
+      "small": "url",
+      "medium": "url",
+      "large": "url"
+    },
+    "name": "Station Wagon",
+    "price": 6000
+  },
+  "jeep": {
+    "img": {
+      "small": "url",
+      "medium": "url",
+      "large": "url"
+    },
+    "name": "Jeep",
+    "price": 6000
+  },
+  "limousine": {
+    "img": {
+      "small": "url",
+      "medium": "url",
+      "large": "url"
+    },
+    "name": "Limousine",
+    "price": 20000
+  },
+  "taxi": {
+    "img": {
+      "small": "url",
+      "medium": "url",
+      "large": "url"
+    },
+    "name": "Taxi Cab",
+    "price": 10000
+  },
+  "fireEngine": {
+    "img": {
+      "small": "url",
+      "medium": "url",
+      "large": "url"
+    },
+    "name": "Fire Engine",
+    "price": 40000
+  }
+}

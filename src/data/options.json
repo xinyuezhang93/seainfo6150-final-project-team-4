@@ -1,0 +1,144 @@
+{
+  "color": {
+    "name": "Color",
+    "inputType": "colorPicker",
+    "requirements": {
+      "fireEngine": "#ff0000",
+      "taxi": "#ffff00"
+    }
+  },
+  "numSeats": {
+    "name": "Number of Seats",
+    "requirements": {
+      "sportsCar": 2,
+      "limousine": 8,
+      "fireEngine": 2
+    }
+  },
+  "interiorFabricColor": {
+    "name": "Interior Fabric Color",
+    "values": ["tan","gray","black","red","maroon","green"]
+  },
+  "dashboardColor": {
+    "name": "Dashboard Color",
+    "values": ["tan","gray","black","red","maroon","green"]
+  },
+  "dashboardLightsColor": {
+    "name": "Dashboard Lights Color",
+    "inputType": "colorPicker"
+  },
+  "hubcapsMaterial": {
+    "name": "Hubcaps Material",
+    "values": ["chrome","steel","plastic"]
+  },
+  "gps": {
+    "name": "GPS",
+    "values": ["yes","no"]
+  },
+  "numExhausts": {
+    "name": "Number of Exhausts",
+    "maximumNum": 4
+  },
+  "tintedWindows": {
+    "name": "Tinted Windows",
+    "values": ["yes","no"],
+    "requirements": {
+      "fireEngine": "no",
+      "jeep": "no"
+    }
+  },
+  "hasRadio": {
+    "name": "Include Radio?",
+    "values": ["yes","no"],
+    "requirements": {
+      "fireEngine": "no"
+    }
+  },
+  "radioType": {
+    "name": "Radio Type",
+    "values": ["basic","medium","fancy"],
+    "requirements": {
+      "sedan": ["basic","medium","fancy"],
+      "truck": ["medium"],
+      "sportsCar": ["medium","fancy"],
+      "suv": ["medium"],
+      "stationWagon": ["basic","medium"],
+      "jeep": ["medium"],
+      "limousine": ["medium","fancy"],
+      "taxi": ["basic","medium"]
+    }
+  },
+  "gloveBox": {
+    "name": "Glove Box",
+    "values": ["yes","no"]
+  },
+  "cupHolders": {
+    "name": "Cup Holders",
+    "values": ["yes","no"]
+  },
+  "numCupHolders": {
+    "name": "Number of Cup Holders"
+  },
+  "cigaretteLighters": {
+    "name": "Cigarette Lighters",
+    "values": ["yes","no"],
+    "requirements": {
+      "fireEngine": "no"
+    }
+  },
+  "numCigaretteLighters": {
+    "name": "Number of Cigarette Lighters"
+  },
+  "spareTire": {
+    "name": "Spare Tire",
+    "values": ["s","m","l","xl"]
+  },
+  "hoodOrnament": {
+    "name": "Hood Ornament",
+    "values": [
+      { "name": "battleship", "img": "url" },
+      { "name": "boot", "img": "url" },
+      { "name": "cannon", "img": "url" },
+      { "name": "horse", "img": "url" },
+      { "name": "iron", "img": "url" },
+      { "name": "racecar", "img": "url" },
+      { "name": "dog", "img": "url" },
+      { "name": "thimble", "img": "url" },
+      { "name": "hat", "img": "url" },
+      { "name": "wheelbarrow", "img": "url" }
+    ]
+  },
+  "engine": {
+    "name": "Engine",
+    "values": ["4-cylinder","6-cylinder","12-cylinder"]
+  },
+  "hasAirConditioning": {
+    "name": "Include Air Conditioning?",
+    "values": ["yes","no"],
+    "requirements": {
+      "jeep": "no"
+    }
+  },
+  "trunkMonkey": {
+    "name": "Trunk Monkey",
+    "values": [
+      { "name": "capuchin", "img": "url" },
+      { "name": "spider", "img": "url" },
+      { "name": "rhesus", "img": "url" },
+      { "name": "macaque", "img": "url" },
+      { "name": "baboon", "img": "url" }
+    ]
+  },
+  "floormatsColor": {
+    "name": "Floormats Color",
+    "values": ["tan","gray","black","red","maroon","green"]
+  },
+  "hasMonogrammedSteeringWheelCover": {
+    "name": "Include Monogrammed Steering Wheel Cover?",
+    "values": ["yes","no"]
+  },
+  "monogram": {
+    "name": "Monogram",
+    "maximumNumLetters": 3
+  }
+}
