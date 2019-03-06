@@ -3,10 +3,44 @@ import { connect } from 'react-redux'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import styles from './App.module.css';
 
-import { selectProduct } from './actions/actions';
+import { selectProduct, setProductOption } from './actions/actions';
 
 import ExampleComponent from './ExampleComponent/ExampleComponent';
 import ProductDetail from './ProductDetail/ProductDetail';
+
+// <Route
+//   path='/products'
+//   render={() => <Products {...props} />}
+// />
+// <Route
+//   path='/products/:id'
+//   render={routerProps =>
+//     <ProductDetail {...props} id={routerProps.match.params.id} />
+//   }
+// />
+// <Route exact path='/order'>
+//   <Route
+//     exact path='/order/1'
+//     render={() => <OrderStep1 {...props} />}
+//   />
+//   <Route
+//     exact path='/order/2'
+//     render={() => <OrderStep2 {...props} />}
+//   />
+//   <Route
+//     exact path='/order/3'
+//     render={() => <OrderStep3 {...props} />}
+//   />
+// </Route>
+// <Route
+//   exact path='/about'
+//   render={() => <About {...props} />}
+// />
+// <Route
+//   exact path='/contact'
+//   render={() => <Contact {...props} />}
+// />
+// <Route component={NotFound} />
 
 let App = (props) => (
   <Router>
@@ -17,37 +51,8 @@ let App = (props) => (
         <Switch>
           <Route
             exact path='/'
-            render={routerProps => <ExampleComponent {...props} />}
+            render={() => <ExampleComponent {...props} />}
           />
-          <Route
-            path='/products/:id'
-            render={routerProps =>
-              <ProductDetail {...props} id={routerProps.match.params.id} />
-            }
-          />
-          <Route exact path='/order'>
-            <Route
-              exact path='/order/1'
-              render={routerProps => <OrderStep1 {...props} />}
-            />
-            <Route
-              exact path='/order/2'
-              render={routerProps => <OrderStep2 {...props} />}
-            />
-            <Route
-              exact path='/order/3'
-              render={routerProps => <OrderStep3 {...props} />}
-            />
-          </Route>
-          <Route
-            exact path='/about'
-            render={routerProps => <About {...props} />}
-          />
-          <Route
-            exact path='/contact'
-            render={routerProps => <Contact {...props} />}
-          />
-          <Route component={NotFound} />
         </Switch>
       </main>
     </div>
@@ -57,7 +62,11 @@ App = connect(
   (state) => state,
   (dispatch) => {
     return {
-      selectProduct: (id) => dispatch(selectProduct({ id }))
+      selectProduct: (productId) => dispatch(selectProduct({ id: productId })),
+      setProductOption: (optionId, e) => {
+        console.log('SETTING', optionId);
+        dispatch(setProductOption({ id: optionId, e }))
+      }
     }
   }
 )(App)

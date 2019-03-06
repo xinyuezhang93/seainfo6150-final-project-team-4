@@ -1,5 +1,4 @@
 import React from 'react';
-import CompareToggle from './CompareToggle';
 
 const ProductDetail = ({
   id,

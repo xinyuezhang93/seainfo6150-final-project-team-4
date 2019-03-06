@@ -5,9 +5,13 @@ import configureStore from './store';
 import './index.css';
 import App from './App';
 
+const store = configureStore();
+
 ReactDOM.render(
- <Provider store={configureStore()}>
+ <Provider store={store}>
   <App />
  </Provider>,
  document.getElementById('root')
 );
+
+window.store = store;

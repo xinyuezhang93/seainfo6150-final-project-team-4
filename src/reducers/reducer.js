@@ -1,4 +1,4 @@
-import { reject } from 'lodash';
+import { omit, reject } from 'lodash';
 import options from '../data/options.json';
 import products from '../data/products.json';
 
@@ -6,7 +6,8 @@ export default (
   state={
     options,
     products,
-    selectedProduct: null
+    selectedOptions: {},
+    selectedProduct: "jeep" //null
   },
   action={}
 ) => {
@@ -15,6 +16,19 @@ export default (
       return {
         ...state,
         selectedProduct: action.payload.id
+      }
+    case 'REMOVE_OPTION':
+      return {
+        ...state,
+        selectedOptions: omit(state.selectedOptions, [action.payload.id])
+      }
+    case 'SET_OPTION':
+      return {
+        ...state,
+        selectedOptions: {
+          ...state.selectedOptions,
+          ...action.payload
+        }
       }
     default:
       return state

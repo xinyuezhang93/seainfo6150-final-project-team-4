@@ -1,13 +1,14 @@
 {
   "color": {
+    "id": "color",
     "name": "Color",
-    "inputType": "colorPicker",
     "requirements": {
       "fireEngine": "#ff0000",
       "taxi": "#ffff00"
     }
   },
   "numSeats": {
+    "id": "numSeats",
     "name": "Number of Seats",
     "requirements": {
       "sportsCar": 2,
@@ -16,48 +17,52 @@
     }
   },
   "interiorFabricColor": {
+    "id": "interiorFabricColor",
     "name": "Interior Fabric Color",
     "values": ["tan","gray","black","red","maroon","green"]
   },
   "dashboardColor": {
+    "id": "dashboardColor",
     "name": "Dashboard Color",
     "values": ["tan","gray","black","red","maroon","green"]
   },
   "dashboardLightsColor": {
-    "name": "Dashboard Lights Color",
-    "inputType": "colorPicker"
+    "id": "dashboardLightsColor",
+    "name": "Dashboard Lights Color"
   },
   "hubcapsMaterial": {
+    "id": "hubcapsMaterial",
     "name": "Hubcaps Material",
     "values": ["chrome","steel","plastic"]
   },
-  "gps": {
-    "name": "GPS",
-    "values": ["yes","no"]
+  "hasGPS": {
+    "id": "hasGPS",
+    "name": "Include GPS?"
   },
   "numExhausts": {
+    "id": "numExhausts",
     "name": "Number of Exhausts",
     "maximumNum": 4
   },
-  "tintedWindows": {
-    "name": "Tinted Windows",
-    "values": ["yes","no"],
+  "hasTintedWindows": {
+    "id": "hasTintedWindows",
+    "name": "Include Tinted Windows?",
     "requirements": {
-      "fireEngine": "no",
-      "jeep": "no"
+      "fireEngine": false,
+      "jeep": false
     }
   },
   "hasRadio": {
+    "id": "hasRadio",
     "name": "Include Radio?",
-    "values": ["yes","no"],
     "requirements": {
-      "fireEngine": "no"
+      "fireEngine": false
     }
   },
   "radioType": {
+    "id": "radioType",
     "name": "Radio Type",
-    "values": ["basic","medium","fancy"],
-    "requirements": {
+    "values": {
       "sedan": ["basic","medium","fancy"],
       "truck": ["medium"],
       "sportsCar": ["medium","fancy"],
@@ -68,32 +73,37 @@
       "taxi": ["basic","medium"]
     }
   },
-  "gloveBox": {
-    "name": "Glove Box",
-    "values": ["yes","no"]
+  "hasGloveBox": {
+    "id": "hasGloveBox",
+    "name": "Include Glove Box?"
   },
-  "cupHolders": {
-    "name": "Cup Holders",
-    "values": ["yes","no"]
+  "hasCupholders": {
+    "id": "hasCupholders",
+    "name": "Include Cupholders?"
   },
-  "numCupHolders": {
-    "name": "Number of Cup Holders"
+  "numCupholders": {
+    "id": "numCupholders",
+    "name": "Number of Cupholders",
+    "maximumNum": 8
   },
-  "cigaretteLighters": {
-    "name": "Cigarette Lighters",
-    "values": ["yes","no"],
+  "hasCigaretteLighters": {
+    "id": "hasCigaretteLighters",
+    "name": "Include Cigarette Lighters?",
     "requirements": {
-      "fireEngine": "no"
+      "fireEngine": false
     }
   },
   "numCigaretteLighters": {
+    "id": "numCigaretteLighters",
     "name": "Number of Cigarette Lighters"
   },
   "spareTire": {
+    "id": "spareTire",
     "name": "Spare Tire",
     "values": ["s","m","l","xl"]
   },
   "hoodOrnament": {
+    "id": "hoodOrnament",
     "name": "Hood Ornament",
     "values": [
       { "name": "battleship", "img": "url" },
@@ -109,17 +119,19 @@
     ]
   },
   "engine": {
+    "id": "engine",
     "name": "Engine",
     "values": ["4-cylinder","6-cylinder","12-cylinder"]
   },
   "hasAirConditioning": {
+    "id": "hasAirConditioning",
     "name": "Include Air Conditioning?",
-    "values": ["yes","no"],
     "requirements": {
-      "jeep": "no"
+      "jeep": false
     }
   },
   "trunkMonkey": {
+    "id": "trunkMonkey",
     "name": "Trunk Monkey",
     "values": [
       { "name": "capuchin", "img": "url" },
@@ -130,15 +142,17 @@
     ]
   },
   "floormatsColor": {
+    "id": "floormatsColor",
     "name": "Floormats Color",
     "values": ["tan","gray","black","red","maroon","green"]
   },
   "hasMonogrammedSteeringWheelCover": {
-    "name": "Include Monogrammed Steering Wheel Cover?",
-    "values": ["yes","no"]
+    "id": "hasMonogrammedSteeringWheelCover",
+    "name": "Include Monogrammed Steering Wheel Cover?"
   },
   "monogram": {
+    "id": "monogram",
     "name": "Monogram",
-    "maximumNumLetters": 3
+    "maximumNum": 3
   }
 }
