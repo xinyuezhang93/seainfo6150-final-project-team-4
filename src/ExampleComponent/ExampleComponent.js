@@ -18,7 +18,7 @@ const ExampleComponent = ({ options, products, selectedOptions, setProductOption
     <input type="text" onChange={setProductOption.bind(null, 'numSeats')}/>
     <fieldset>
       <label htmlFor="numCupholders">{options.numCupholders.name}</label>
-          <input type="number" max={options.numCupholders.maximaximumNum} onChange={setProductOption.bind(null, 'numCupholders')}/>
+          <input type="number" max={options.numCupholders.maximumNum} onChange={setProductOption.bind(null, 'numCupholders')}/>
     </fieldset>
     <select onChange={setProductOption.bind(null, 'hubcapsMaterial')}>
       {
@@ -87,7 +87,7 @@ const ExampleComponent = ({ options, products, selectedOptions, setProductOption
       <label htmlFor='hasCigaretteLighters'>{options.hasCigaretteLighters.name}</label>
 
       <label htmlFor="numCigaretteLighters">{options.numCigaretteLighters.name}</label>
-          <input type="number" max={options.numCigaretteLighters.maximaximumNum} onChange={setProductOption.bind(null, 'numCigaretteLighters')}/>
+          <input type="number" max={options.numCigaretteLighters.maximumNum} onChange={setProductOption.bind(null, 'numCigaretteLighters')}/>
     </fieldset>
 
     <fieldset>

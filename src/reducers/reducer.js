@@ -6,6 +6,7 @@ import products from '../data/products.json';
 export default (
   state={
     categories,
+    error: null,
     options,
     products,
     selectedOptions: {},
@@ -38,6 +39,13 @@ export default (
           ...action.payload
         }
       }
+    case 'SET_ERROR':
+      return {
+        ...state,
+        error: action.payload.error
+      }
+    case 'REMOVE_ERROR':
+      return omit(state, ['error'])
     default:
       return state
   }

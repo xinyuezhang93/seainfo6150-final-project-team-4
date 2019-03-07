@@ -84,7 +84,9 @@
   "numCupholders": {
     "id": "numCupholders",
     "name": "Number of Cupholders",
-    "maximumNum": 8
+    "requirements": {      
+      "maximumNum": 8
+    }
   },
   "hasCigaretteLighters": {
     "id": "hasCigaretteLighters",
@@ -165,6 +167,8 @@
   "monogram": {
     "id": "monogram",
     "name": "Monogram",
-    "maximumNum": 3
+    "requirements": {
+      "maximumNum": 3
+    }
   }
 }

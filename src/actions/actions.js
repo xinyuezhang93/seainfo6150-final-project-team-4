@@ -11,6 +11,8 @@ export const viewProduct = ({ id }) => ({
 });
 
 export const setProductOption = ({ id, e }) => (dispatch, getState) => {
+  dispatch(removeError());
+
   const value = e.target.hasOwnProperty('checked')
     ? e.target.checked
     : e.target.value;
@@ -97,16 +99,25 @@ export const setProductOption = ({ id, e }) => (dispatch, getState) => {
   }
 }
 
-const setOption = ({ id, value }) => ({
-  type: 'SET_OPTION',
-  payload: {
-    [`${id}`]: value
-  }
+const removeError = () => ({
+  type: 'REMOVE_ERROR'
 });
 
 const removeOption = (id) => ({
   type: 'REMOVE_OPTION',
   payload: { id }
+});
+
+const setError = (error) => ({
+  type: 'SET_ERROR',
+  payload: { error }
+});
+
+const setOption = ({ id, value }) => ({
+  type: 'SET_OPTION',
+  payload: {
+    [`${id}`]: value
+  }
 });
 
 const normalizeBoolean = (value) => {
@@ -157,6 +168,13 @@ const setHasGPS = (hasGPS) => (dispatch, getState) => {
 }
 
 const setNumExhausts = (numExhausts) => (dispatch, getState) => {
+  const { options } = getState();
+  const maximumNumExhausts = options.numExhausts.requirements.maximumNum;
+
+  if (numExhausts > maximumNumExhausts) {
+    throw new Error(`Vehicles can have a maximum of ${maximumNumExhausts} exhausts.`);
+  }
+
   dispatch(setOption({ id: 'numExhausts', value: numExhausts }));
 }
 
@@ -190,7 +208,7 @@ const setHasRadio = (hasRadio) => (dispatch, getState) => {
     hasRadio = get(options.hasRadio.requirements, selectedProduct.type);
 
     if (!hasRadio) {
-      throw new Error('The selected vehicle does not support radios.');
+      dispatch(setError('The selected vehicle does not support radios.'));
     }
   }
 
@@ -226,6 +244,12 @@ const setHasCupholders = (hasCupholders) => (dispatch, getState) => {
 }
 
 const setNumCupholders = (numCupholders) => (dispatch, getState) => {
+  const { options } = getState();
+  const maximumNumCupholders = options.numCupholders.requirements.maximumNum;
+
+  if (numCupholders > maximumNumCupholders) {
+    dispatch(setError(`Vehicles can have a maximum of ${maximumNumCupholders} cupholders.`));
+  }
   dispatch(setOption({ id: 'numCupholders', value: numCupholders }));
 }
 
@@ -238,7 +262,7 @@ const setHasCigaretteLighters = (hasCigaretteLighters) => (dispatch, getState) =
     hasCigaretteLighters = get(options.hasCigaretteLighters.requirements, selectedProduct.type)
 
     if (!hasCigaretteLighters) {
-      throw new Error('The selected vehicle does not support cigarette lighters.');
+      dispatch(setError('The selected vehicle does not support cigarette lighters.'));
     }
   }
 
@@ -285,7 +309,7 @@ const setHasAirConditioning = (hasAirConditioning) => (dispatch, getState) => {
     hasAirConditioning = get(options.hasAirConditioning.requirements, selectedProduct.type)
 
     if (!hasAirConditioning) {
-      throw new Error('The selected vehicle does not support tinted windows.');
+      dispatch(setError('The selected vehicle does not support tinted windows.'));
     }
   }
 
@@ -328,5 +352,11 @@ const setHasMonogrammedSteeringWheelCover = (hasMonogrammedSteeringWheelCover) =
 }
 
 const setMonogram = (monogram) => (dispatch, getState) => {
+  const { options } = getState();
+  const maximumNumMonogramLetters = options.monogram.requirements.maximumNum;
+
+  if (monogram.length > maximumNumMonogramLetters) {
+    dispatch(setError(`Vehicles can have a maximum of ${maximumNumMonogramLetters} letters in the monogram.`));
+  }
   dispatch(setOption({ id: 'monogram', value: monogram }));
 }
