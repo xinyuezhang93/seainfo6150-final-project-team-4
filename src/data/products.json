@@ -1,83 +1,121 @@
 {
-  "sedan": {
-    "img": {
-      "small": "url",
-      "medium": "url",
-      "large": "url"
-    },
-    "name": "Sedan",
-    "price": 4000
+  "20b54c306772": {
+    "id": "20b54c306772",
+    "categoryId": "sedan",
+    "year": 2018,
+    "available": true,
+    "price": 4000,
+    "sale": 2000
   },
-  "truck": {
-    "img": {
-      "small": "url",
-      "medium": "url",
-      "large": "url"
-    },
-    "name": "Truck",
+  "9029c82433e5": {
+    "id": "9029c82433e5",
+    "categoryId": "sedan",
+    "year": 2016,
+    "available": true,
+    "price": 7000
+  },
+  "e2b6c98cf5c5": {
+    "id": "e2b6c98cf5c5",
+    "categoryId": "sedan",
+    "year": 2015,
+    "available": true,
+    "price": 4000,
+    "sale": 2000
+  },
+  "84902cf57bb4": {
+    "id": "84902cf57bb4",
+    "categoryId": "truck",
+    "year": 2016,
+    "available": true,
     "price": 8000
   },
-  "sportsCar": {
-    "img": {
-      "small": "url",
-      "medium": "url",
-      "large": "url"
-    },
-    "name": "Sports Car",
+  "cb37df7ebc08": {
+    "id": "cb37df7ebc08",
+    "categoryId": "truck",
+    "year": 2016,
+    "available": true,
+    "price": 6000
+  },
+  "d0d6ce61e8cc": {
+    "id": "d0d6ce61e8cc",
+    "categoryId": "sportsCar",
+    "year": 2018,
+    "available": true,
     "price": 15000
   },
-  "suv": {
-    "img": {
-      "small": "url",
-      "medium": "url",
-      "large": "url"
-    },
-    "name": "SUV",
-    "price": 18000
+  "14d17e68ec41": {
+    "id": "14d17e68ec41",
+    "categoryId": "suv",
+    "year": 2017,
+    "available": false,
+    "price": 18000,
+    "sale": 14000
   },
-  "stationWagon": {
-    "img": {
-      "small": "url",
-      "medium": "url",
-      "large": "url"
-    },
-    "name": "Station Wagon",
+  "fbf8f885942f": {
+    "id": "fbf8f885942f",
+    "categoryId": "suv",
+    "year": 2017,
+    "available": false,
+    "price": 12000,
+    "sale": 11000
+  },
+  "30f8d6a2956e": {
+    "id": "30f8d6a2956e",
+    "categoryId": "suv",
+    "year": 2015,
+    "available": false,
+    "price": 18000,
+    "sale": 14000
+  },
+  "d9efbc4e56c9": {
+    "id": "d9efbc4e56c9",
+    "categoryId": "stationWagon",
+    "year": 2015,
+    "available": true,
+    "price": 6000,
+    "sale": 3000
+  },
+  "1c2d9303a50f": {
+    "id": "1c2d9303a50f",
+    "categoryId": "jeep",
+    "year": 2016,
+    "available": true,
     "price": 6000
   },
-  "jeep": {
-    "img": {
-      "small": "url",
-      "medium": "url",
-      "large": "url"
-    },
-    "name": "Jeep",
-    "price": 6000
-  },
-  "limousine": {
-    "img": {
-      "small": "url",
-      "medium": "url",
-      "large": "url"
-    },
-    "name": "Limousine",
+  "c56a5eb53851": {
+    "id": "c56a5eb53851",
+    "categoryId": "limousine",
+    "year": 2015,
+    "available": false,
     "price": 20000
   },
-  "taxi": {
-    "img": {
-      "small": "url",
-      "medium": "url",
-      "large": "url"
-    },
-    "name": "Taxi Cab",
-    "price": 10000
+  "4d194f3740de": {
+    "id": "4d194f3740de",
+    "categoryId": "limousine",
+    "year": 2016,
+    "available": true,
+    "price": 21000
   },
-  "fireEngine": {
-    "img": {
-      "small": "url",
-      "medium": "url",
-      "large": "url"
-    },
-    "name": "Fire Engine",
+  "3530986f4eb0": {
+    "id": "3530986f4eb0",
+    "categoryId": "taxi",
+    "year": 2018,
+    "available": true,
+    "price": 10000,
+    "sale": 4000
+  },
+  "ef34c088f22b": {
+    "id": "ef34c088f22b",
+    "categoryId": "taxi",
+    "year": 2015,
+    "available": true,
+    "price": 9000
+  },
+  "3530986f4eb0": {
+    "id": "3530986f4eb0",
+    "categoryId": "fireEngine",
+    "year": 2016,
+    "available": true,
     "price": 40000
   }
 }

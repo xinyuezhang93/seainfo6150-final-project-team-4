@@ -102,14 +102,17 @@
     "name": "Spare Tire",
     "values": ["s","m","l","xl"]
   },
+  "hasHoodOrnament": {
+    "id": "hasHoodOrnament",
+    "name": "Include Hood Ornament?",
+    "premium": true
+  },
   "hoodOrnament": {
     "id": "hoodOrnament",
     "name": "Hood Ornament",
     "values": [
       { "name": "battleship", "img": "url" },
       { "name": "boot", "img": "url" },
-      { "name": "cannon", "img": "url" },
-      { "name": "horse", "img": "url" },
       { "name": "iron", "img": "url" },
       { "name": "racecar", "img": "url" },
       { "name": "dog", "img": "url" },
@@ -121,7 +124,11 @@
   "engine": {
     "id": "engine",
     "name": "Engine",
-    "values": ["4-cylinder","6-cylinder","12-cylinder"]
+    "values": [
+      "4-cylinder",
+      "6-cylinder",
+      "12-cylinder"
+    ]
   },
   "hasAirConditioning": {
     "id": "hasAirConditioning",
@@ -130,6 +137,11 @@
       "jeep": false
     }
   },
+  "hasTrunkMonkey": {
+    "id": "hasTrunkMonkey",
+    "name": "Include Trunk Monkey?",
+    "premium": true
+  },
   "trunkMonkey": {
     "id": "trunkMonkey",
     "name": "Trunk Monkey",
@@ -137,18 +149,18 @@
       { "name": "capuchin", "img": "url" },
       { "name": "spider", "img": "url" },
       { "name": "rhesus", "img": "url" },
-      { "name": "macaque", "img": "url" },
+      { "name": "mandrill", "img": "url" },
       { "name": "baboon", "img": "url" }
     ]
   },
   "floormatsColor": {
     "id": "floormatsColor",
-    "name": "Floormats Color",
-    "values": ["tan","gray","black","red","maroon","green"]
+    "name": "Floormats Color"
   },
   "hasMonogrammedSteeringWheelCover": {
     "id": "hasMonogrammedSteeringWheelCover",
-    "name": "Include Monogrammed Steering Wheel Cover?"
+    "name": "Include Monogrammed Steering Wheel Cover?",
+    "premium": true
   },
   "monogram": {
     "id": "monogram",

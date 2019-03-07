@@ -1,7 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import TotalPrice from '../Order/TotalPrice';
 
-const ExampleComponent = ({ options, products, selectedOptions, setProductOption, selectedProduct }) => (
+const ExampleComponent = ({ options, products, selectedOptions, setProductOption, selectedProductId }) => (
   <div>
+
+  <hr />
+    <h3>TOtal</h3>
+    <TotalPrice
+      options={options}
+      product={products[selectedProductId]}
+      selectedOptions={selectedOptions}
+    />
+
+    <hr />
     <input type="color" onChange={setProductOption.bind(null, 'color')}/>
     <input type="text" onChange={setProductOption.bind(null, 'numSeats')}/>
     <fieldset>
@@ -30,37 +42,7 @@ const ExampleComponent = ({ options, products, selectedOptions, setProductOption
 
     <fieldset>
       <label htmlFor="floormatsColor">{options.floormatsColor.name}</label>
-      <select onChange={setProductOption.bind(null, 'floormatsColor')}>
-        {
-          options.floormatsColor.values.map(color =>
-            <option key={color} value={color}>{color}</option>
-          )
-        }
-      </select>
-    </fieldset>
-
-    <fieldset>
-      <label htmlFor="hoodOrnament">{options.hoodOrnament.name}</label>
-      <select onChange={setProductOption.bind(null, 'hoodOrnament')}>
-        {
-          options.hoodOrnament.values.map(({ name }) =>
-            <option key={name} value={name}>{name}</option>
-          )
-        }
-      </select>
-
-    </fieldset>
-
-    <fieldset>
-      <label htmlFor="trunkMonkey">{options.trunkMonkey.name}</label>
-      <select onChange={setProductOption.bind(null, 'trunkMonkey')}>
-        {
-          options.trunkMonkey.values.map(({ name }) =>
-            <option key={name} value={name}>{name}</option>
-          )
-        }
-      </select>
-
+      <input type="color" onChange={setProductOption.bind(null, 'floormatsColor')}/>
     </fieldset>
 
     <fieldset>
@@ -107,6 +89,37 @@ const ExampleComponent = ({ options, products, selectedOptions, setProductOption
       <label htmlFor="numCigaretteLighters">{options.numCigaretteLighters.name}</label>
           <input type="number" max={options.numCigaretteLighters.maximaximumNum} onChange={setProductOption.bind(null, 'numCigaretteLighters')}/>
     </fieldset>
+
+    <fieldset>
+      <input id='hasHoodOrnament' type="checkbox" onChange={setProductOption.bind(null, 'hasHoodOrnament')} />
+      <label htmlFor='hasHoodOrnament'>{options.hasHoodOrnament.name}</label>
+
+
+      <label htmlFor="hoodOrnament">{options.hoodOrnament.name}</label>
+      <select onChange={setProductOption.bind(null, 'hoodOrnament')}>
+        {
+          options.hoodOrnament.values.map(({ name }) =>
+            <option key={name} value={name}>{name}</option>
+          )
+        }
+      </select>
+
+    </fieldset>
+
+    <fieldset>
+      <input id='hasTrunkMonkey' type="checkbox" onChange={setProductOption.bind(null, 'hasTrunkMonkey')} />
+      <label htmlFor='hasTrunkMonkey'>{options.hasTrunkMonkey.name}</label>
+
+      <label htmlFor="trunkMonkey">{options.trunkMonkey.name}</label>
+      <select onChange={setProductOption.bind(null, 'trunkMonkey')}>
+        {
+          options.trunkMonkey.values.map(({ name }) =>
+            <option key={name} value={name}>{name}</option>
+          )
+        }
+      </select>
+
+    </fieldset>
     <fieldset>
       <input id='hasMonogrammedSteeringWheelCover' type="checkbox" onChange={setProductOption.bind(null, 'hasMonogrammedSteeringWheelCover')} />
       <label htmlFor='hasMonogrammedSteeringWheelCover'>{options.hasMonogrammedSteeringWheelCover.name}</label>
@@ -116,7 +129,7 @@ const ExampleComponent = ({ options, products, selectedOptions, setProductOption
     </fieldset>
     <ul>
       {
-        Object.keys(products).map((product) => <li key={product}>{product}</li>)
+        Object.values(products).map((product) => <li key={product.id}><Link to={`/products/${product.categoryId}/${product.id}`}>{product.year}</Link></li>)
       }
     </ul>
     <ul>

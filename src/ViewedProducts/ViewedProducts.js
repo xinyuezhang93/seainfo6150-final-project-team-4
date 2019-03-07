@@ -1,0 +1,27 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+
+const ViewedProducts = ({ categories, products }) => {
+  if (!products.length) {
+    return null;
+  }
+
+  return products.slice(0,5).map(product => {
+    const category = categories[product.categoryId];
+    return (
+      <div key={product.id}>
+        <Link to={`/products/${category.id}/${product.id}`}>
+          <img src={category.img.sm} />
+        </Link>
+      </div>
+    );
+  });
+};
+
+ViewedProducts.propTypes = {
+  categories: PropTypes.object.isRequired,
+  products: PropTypes.array.isRequired
+};
+
+export default ViewedProducts;

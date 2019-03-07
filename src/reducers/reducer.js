@@ -1,13 +1,16 @@
-import { omit, reject } from 'lodash';
+import { omit } from 'lodash';
+import categories from '../data/categories.json';
 import options from '../data/options.json';
 import products from '../data/products.json';
 
 export default (
   state={
+    categories,
     options,
     products,
     selectedOptions: {},
-    selectedProduct: "jeep" //null
+    selectedProductId: null,
+    viewedProducts: []
   },
   action={}
 ) => {
@@ -15,7 +18,12 @@ export default (
     case 'SELECT_PRODUCT':
       return {
         ...state,
-        selectedProduct: action.payload.id
+        selectedProductId: action.payload.id
+      }
+    case 'VIEW_PRODUCT':
+      return {
+        ...state,
+        viewedProducts: [action.payload.id, ...state.viewedProducts]
       }
     case 'REMOVE_OPTION':
       return {
