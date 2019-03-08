@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import TotalPrice from '../Order/TotalPrice';
+import { capitalize } from 'lodash';
 
 const ExampleComponent = ({ options, products, selectedOptions, setProductOption, selectedProductId }) => (
   <div>
@@ -96,10 +97,12 @@ const ExampleComponent = ({ options, products, selectedOptions, setProductOption
 
 
       <label htmlFor="hoodOrnament">{options.hoodOrnament.name}</label>
-      <select onChange={setProductOption.bind(null, 'hoodOrnament')}>
+      <select
+        value={selectedOptions.hoodOrnament}
+        onChange={setProductOption.bind(null, 'hoodOrnament')}>
         {
-          options.hoodOrnament.values.map(({ name }) =>
-            <option key={name} value={name}>{name}</option>
+          options.hoodOrnament.values.map(({ id }) =>
+            <option key={id} value={id}>{capitalize(id)}</option>
           )
         }
       </select>
@@ -111,10 +114,12 @@ const ExampleComponent = ({ options, products, selectedOptions, setProductOption
       <label htmlFor='hasTrunkMonkey'>{options.hasTrunkMonkey.name}</label>
 
       <label htmlFor="trunkMonkey">{options.trunkMonkey.name}</label>
-      <select onChange={setProductOption.bind(null, 'trunkMonkey')}>
+      <select
+        value={selectedOptions.trunkMonkey}
+        onChange={setProductOption.bind(null, 'trunkMonkey')}>
         {
-          options.trunkMonkey.values.map(({ name }) =>
-            <option key={name} value={name}>{name}</option>
+          options.trunkMonkey.values.map(({ id }) =>
+            <option key={id} value={id}>{capitalize(id)}</option>
           )
         }
       </select>
@@ -125,7 +130,7 @@ const ExampleComponent = ({ options, products, selectedOptions, setProductOption
       <label htmlFor='hasMonogrammedSteeringWheelCover'>{options.hasMonogrammedSteeringWheelCover.name}</label>
 
       <label htmlFor="monogram">{options.monogram.name}</label>
-          <input type="text" onChange={setProductOption.bind(null, 'monogram')}/>
+      <input type="text" onChange={setProductOption.bind(null, 'monogram')}/>
     </fieldset>
     <ul>
       {

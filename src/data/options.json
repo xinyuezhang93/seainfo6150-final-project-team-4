@@ -84,7 +84,7 @@
   "numCupholders": {
     "id": "numCupholders",
     "name": "Number of Cupholders",
-    "requirements": {      
+    "requirements": {
       "maximumNum": 8
     }
   },
@@ -113,14 +113,14 @@
     "id": "hoodOrnament",
     "name": "Hood Ornament",
     "values": [
-      { "name": "battleship", "img": "url" },
-      { "name": "boot", "img": "url" },
-      { "name": "iron", "img": "url" },
-      { "name": "racecar", "img": "url" },
-      { "name": "dog", "img": "url" },
-      { "name": "thimble", "img": "url" },
-      { "name": "hat", "img": "url" },
-      { "name": "wheelbarrow", "img": "url" }
+      { "id": "battleship", "img": "url" },
+      { "id": "boot", "img": "url" },
+      { "id": "iron", "img": "url" },
+      { "id": "racecar", "img": "url" },
+      { "id": "dog", "img": "url" },
+      { "id": "thimble", "img": "url" },
+      { "id": "hat", "img": "url" },
+      { "id": "wheelbarrow", "img": "url" }
     ]
   },
   "engine": {
@@ -148,11 +148,11 @@
     "id": "trunkMonkey",
     "name": "Trunk Monkey",
     "values": [
-      { "name": "capuchin", "img": "url" },
-      { "name": "spider", "img": "url" },
-      { "name": "rhesus", "img": "url" },
-      { "name": "mandrill", "img": "url" },
-      { "name": "baboon", "img": "url" }
+      { "id": "capuchin", "img": "url" },
+      { "id": "spider", "img": "url" },
+      { "id": "rhesus", "img": "url" },
+      { "id": "mandrill", "img": "url" },
+      { "id": "baboon", "img": "url" }
     ]
   },
   "floormatsColor": {
