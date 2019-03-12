@@ -200,12 +200,12 @@ Your contact page should use good principles of usability and accessibility disc
 ### Order flow
 Your order flow **must** have 3 screens/steps and collect user options and information as detailed below. The logic and routing to move from one screen to the next has already been implemented for you.
 
-### Options
+#### Options
 When ordering, a user must specify values for options they want.
 
 It is your responsibility as the UI developer to present the options in a clear and easy-to-understand manner, taking into account the option requirements as presented below and good principles of usability and accessibility.
 
-#### Standard Options
+##### Standard Options
 
 All options can be found here:
 `src/data/options.json`
@@ -220,14 +220,14 @@ Some options have error conditions already implemented. If the value is invalid,
 
 Here is the list of options/information that you must gather in the order flow with explanations and how to store the information in state:
 
-##### Color (required)
+###### Color (required)
 A user must select a hex/rgb color for their vehicle, with 2 exceptions:
 * Taxis can only be yellow (#ffff0)
 * Fire engines can only be red (#ff0000)
 
 This logic is already implemented. On your color input, add the following handler `onChange={setProductOption.bind(null, 'color')}`
 
-##### Number of seats (required)
+###### Number of seats (required)
 A user must select a number of seats. The value must be a number and must be less than or equal to 10 and greater than or equal to 1, with 3 exceptions:
 * Sports cars can only have 2 seats
 * Limousines can only have 8 seats
@@ -237,39 +237,39 @@ A user must select a number of seats. The value must be a number and must be les
 
 This logic is already implemented. On your seat number input, add the following handler `onChange={setProductOption.bind(null, 'numSeats')}`
 
-##### Interior fabric color (required)
+###### Interior fabric color (required)
 A user must select one of the following colors: tan, gray, black, red, maroon, green
 
 On your interior fabric color input, add the following handler `onChange={setProductOption.bind(null, 'interiorFabricColor')}`
 
-##### Dashboard color (required)
+###### Dashboard color (required)
 A user must select one of the following colors: tan, gray, black, red, maroon, green
 
 On your dashboard color input, add the following handler `onChange={setProductOption.bind(null, 'dashboardColor')}`
 
-##### Dashboard lights color (required)
+###### Dashboard lights color (required)
 A user may select any hex/rgb color for their dashboard lights.
 
 On your color input, add the following handler `onChange={setProductOption.bind(null, 'dashboardLightsColor')}`
 
-##### Hubcaps material (required)
+###### Hubcaps material (required)
 A user may select one of the following hubcaps materials: chrome, steel, plastic
 
 On your hubcaps materials input, add the following handler `onChange={setProductOption.bind(null, 'hubcapsMaterial')}`
 
-##### GPS
+###### GPS
 A user may select whether they want GPS or not.
 
 On your GPS input, add the following handler `onChange={setProductOption.bind(null, 'hasGPS')}`
 
-##### Number of exhausts (required)
+###### Number of exhausts (required)
 A user must select a number of exhausts. The value must be a number and must be less than or equal to 4 and greater than or equal to 1.
 
 **If the number is greater than 10 or less than 1, an error will be displayed.**
 
 This logic is already implemented. On your exhausts number input, add the following handler `onChange={setProductOption.bind(null, 'numExhausts')}`
 
-##### Tinted windows
+###### Tinted windows
 A user may select if they want tinted windows or not, with 2 exceptions:
 * Fire engines cannot have tinted windows.
 * Jeeps cannot have tinted windows.
@@ -278,7 +278,7 @@ A user may select if they want tinted windows or not, with 2 exceptions:
 
 This logic is already implemented. On your tinted windows input, add the following handler `onChange={setProductOption.bind(null, 'hasTintedWindows')}`
 
-##### Radio
+###### Radio
 A user may select if they want a radio or not, with 1 exception:
 * Fire engines cannot have radios.
 
@@ -298,12 +298,12 @@ The radio type options for the various categories can be seen in the `values` un
 
 This logic is already implemented. On your radio type input, add the following handler `onChange={setProductOption.bind(null, 'radioType')}`
 
-##### Glove box
+###### Glove box
 A user may select whether they want a glove box or not.
 
 On your glove box input, add the following handler `onChange={setProductOption.bind(null, 'hasGloveBox')}`
 
-##### Cupholders
+###### Cupholders
 A user may select whether they want cupholders or not.
 
 On your cupholders input, add the following handler `onChange={setProductOption.bind(null, 'hasCupholders')}`
@@ -312,7 +312,7 @@ If a user chooses to add cupholders, they then need to choose how many.
 
 On your cupholders number input, add the following handler `onChange={setProductOption.bind(null, 'numCupholders')}`
 
-##### Cigarette lighters
+###### Cigarette lighters
 A user may select if they want cigarette lighters or not, with 1 exception:
 * Fire engines cannot have cigarette lighters.
 
@@ -324,17 +324,17 @@ If a user chooses to add cigarette lighters for a vehicle that can support it, t
 
 On your cigarette lighters number input, add the following handler `onChange={setProductOption.bind(null, 'numCigaretteLighters')}`
 
-##### Spare tire (required)
+###### Spare tire (required)
 A user must select one of the following spare tire sizes: S, M, L, XL
 
 On your spare tire input, add the following handler `onChange={setProductOption.bind(null, 'spareTire')}`
 
-##### Engine (required)
+###### Engine (required)
 A user must select one of the following spare tire sizes: 4-cylinder, 6-cylinder, 12-cylinder
 
 On your engine input, add the following handler `onChange={setProductOption.bind(null, 'engine')}`
 
-##### Air conditioning
+###### Air conditioning
 A user may select if they want air conditioning or not, with 1 exception:
 * Jeeps cannot have air conditioning.
 
@@ -342,18 +342,18 @@ A user may select if they want air conditioning or not, with 1 exception:
 
 This logic is already implemented. On your seat number input, add the following handler `onChange={setProductOption.bind(null, 'hasAirConditioning')}`
 
-##### Floormats color (required)
+###### Floormats color (required)
 A user must select any hex/rgb color for their floormats color.
 
 On your floormats color input, add the following handler `onChange={setProductOption.bind(null, 'floormatsColor')}`
 
 
-#### Premium options
+##### Premium options
 There are 3 options that are premium and add an extra $50 to the base price of the vehicle.
 
 The logic for implementing the additional money and calculating the total price has already been implemented and will be displayed properly if you use the `Order/TotalPrice` component.
 
-##### Hood ornament
+###### Hood ornament
 A user may select if they want a hood ornament or not.
 
 On your hood ornament input, add the following handler `onChange={setProductOption.bind(null, 'hasHoodOrnament')}`
@@ -366,7 +366,7 @@ A user much select one of the following types: battleship, boot, cannon, horse, 
 
 On your hood ornament type input, add the following handler `onChange={setProductOption.bind(null, 'hoodOrnament')}`
 
-##### Trunk monkey
+###### Trunk monkey
 A user may select if they want a trunk monkey or not.
 
 On your trunk monkey input, add the following handler `onChange={setProductOption.bind(null, 'hasTrunkMonkey')}`
@@ -379,7 +379,7 @@ A user much select one of the following types: capuchin, spider, rhesus, macaque
 
 On your hood ornament type input, add the following handler `onChange={setProductOption.bind(null, 'trunkMonkey')}`
 
-##### Monogrammed steering wheel cover
+###### Monogrammed steering wheel cover
 A user may select if they want a monogrammed steering wheel cover or not.
 
 On your monogrammed steering wheel cover input, add the following handler `onChange={setProductOption.bind(null, 'hasMonogrammedSteeringWheelCover')}`
@@ -388,7 +388,7 @@ If a user chooses to add a hasMonogrammedSteeringWheelCover, they then need to e
 
 On your monogram input, add the following handler `onChange={setProductOption.bind(null, 'monogram')}`
 
-### Buyer information
+#### Buyer information
 During the order flow, you must collect following information about the buyer. Assume that the company will call them later to get payment information, so we do not have to gather credit card numbers insecurely, for example.
 
 * Buyer’s name
@@ -408,10 +408,10 @@ On every input you create for buyer information, add the following handler:
 So, for example, to store the buyer's name, you might use the handler:
 `onChange={setUserInfo.bind(null, 'buyerName')}`
 
-### Summary page
+#### Summary page
 The second-to-last step of the order flow must be a summary of all the gathered information presented in a clear, easy-to-read way.
 
-### Thank you page
+#### Thank you page
 The last step of the order flow must be a thank you page that thanks the user for their order.
 
 <hr>
