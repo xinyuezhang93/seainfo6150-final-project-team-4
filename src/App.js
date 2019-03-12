@@ -12,7 +12,9 @@ import {
 
 
 // components
-import ExampleComponent from './ExampleComponent/ExampleComponent';
+import Home from './Home/Home';
+import About from './About/About';
+import Contact from './Contact/Contact';
 import AllProducts from './AllProducts/AllProducts';
 import Categories from './Categories/Categories';
 import CategoryProducts from './CategoryProducts/CategoryProducts';
@@ -23,6 +25,7 @@ import OrderStep1 from './Order/OrderStep1';
 import OrderStep2 from './Order/OrderStep2';
 import Summary from './Order/Summary';
 import ThankYou from './Order/ThankYou';
+import NotFound from './NotFound/NotFound';
 
 let App = (props) => (
   <Router>
@@ -53,87 +56,81 @@ let App = (props) => (
         {/* end error display */}
 
         <Switch>
-        {/*
-
-          */}
           <Route
-          exact path='/'
-          render={() => <ExampleComponent {...props} />}
+            exact path='/'
+            render={() => <Home {...props} />}
           />
-            <Route
-              exact path='/products'
-              render={() => {
-                const sortedProducts = Object.values(props.products).sort((a,b) => b.year - a.year);
-                return (
-                  <AllProducts
-                    categories={props.categories}
-                    products={sortedProducts}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact path='/products/:category'
-              render={routerProps => {
-                const categoryId = routerProps.match.params.category;
-                const category = props.categories[categoryId];
+          <Route
+            exact path='/products'
+            render={() => {
+              const sortedProducts = Object.values(props.products).sort((a,b) => b.year - a.year);
+              return (
+                <AllProducts
+                  categories={props.categories}
+                  products={sortedProducts}
+                />
+              );
+            }}
+          />
+          <Route
+            exact path='/products/:category'
+            render={routerProps => {
+              const categoryId = routerProps.match.params.category;
+              const category = props.categories[categoryId];
 
-                const products = Object.values(props.products).filter(product =>
-                  product.categoryId === categoryId
-                );
-                const sortedProducts = Object.values(products).sort((a,b) => b.year - a.year);
+              const products = Object.values(props.products).filter(product =>
+                product.categoryId === categoryId
+              );
+              const sortedProducts = Object.values(products).sort((a,b) => b.year - a.year);
 
 
-                return (
-                  <CategoryProducts
-                    categories={props.categories}
-                    category={category}
-                    products={sortedProducts}
-                  />
-                );
-              }}
-            />
-            <Route
-              path='/products/:category/:id'
-              render={routerProps => {
-                const id = routerProps.match.params.id;
-                const product = props.products[id];
+              return (
+                <CategoryProducts
+                  categories={props.categories}
+                  category={category}
+                  products={sortedProducts}
+                />
+              );
+            }}
+          />
+          <Route
+            path='/products/:category/:id'
+            render={routerProps => {
+              const id = routerProps.match.params.id;
+              const product = props.products[id];
 
-                return (
-                  <ProductDetail {...props} product={product} />
-                );
-              }}
-            />
-            <Route
-              exact path='/order/1'
-              render={() => <OrderStep1 {...props} />}
-            />
-            <Route
-              exact path='/order/2'
-              render={() => <OrderStep2 {...props} />}
-            />
-            <Route
-              exact path='/order/summary'
-              render={() => <Summary {...props} />}
-            />
-            <Route
-              exact path='/order/thank-you'
-              render={() => <ThankYou />}
-            />
-            {/*
-
-              <Route
-              exact path='/about'
-              render={() => <About {...props} />}
-              />
-              <Route
-              exact path='/contact'
-              render={() => <Contact {...props} />}
-              />
-              <Route
-              render={() => <NotFound {...props} />}
-              />
-              */}
+              return (
+                <ProductDetail {...props} product={product} />
+              );
+            }}
+          />
+          <Route
+            exact path='/order/1'
+            render={() => <OrderStep1 {...props} />}
+          />
+          <Route
+            exact path='/order/2'
+            render={() => <OrderStep2 {...props} />}
+          />
+          <Route
+            exact path='/order/summary'
+            render={() => <Summary {...props} />}
+          />
+          <Route
+            exact path='/order/thank-you'
+            render={() => <ThankYou />}
+          />
+          <Route
+            exact path='/about'
+            render={() => <About {...props} />}
+          />
+          <Route
+            exact path='/contact'
+            render={() => <Contact {...props} />}
+          />
+          <Route
+            render={() => <NotFound {...props} />}
+          />
         </Switch>
       </main>
     </div>
