@@ -1,6 +1,6 @@
 # SEA INFO-6150 Final Project
 
-Link to final project assignment: https://github.com/aprilbingham-neu/seainfo6150/assignments/final-project.md
+Link to final project assignment: https://github.com/aprilbingham-neu/seainfo6150/blob/master/assignments/final-project.md
 
 <hr>
 
