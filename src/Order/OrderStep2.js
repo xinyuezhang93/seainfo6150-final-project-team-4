@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Redirect } from "react-router-dom";
 
-class OrderStep1 extends Component {
+class OrderStep2 extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,29 +20,26 @@ class OrderStep1 extends Component {
     const {
       options,
       selectedProductId,
-      setProductOption
+      setUserInfo
     } = this.props;
 
     return this.state.submittedSuccessfully
-      ? (<Redirect to="/order/2" />)
+      ? (<Redirect to="/order/summary" />)
       : (
       <form onSubmit={this.handleSubmit.bind(this)}>
-        <fieldset>
-          <label htmlFor="color">Color</label>
-          <input required id="color" type="text" onChange={setProductOption.bind(null, 'color')}/>
-        </fieldset>
 
+        <input type="text" onChange={setUserInfo.bind(null, 'buyerName')} />
         <fieldset>
-          <input type="submit" value="Go to step 2" />
+          <input type="submit" value="Go to summary" />
         </fieldset>
       </form>
     )
   }
 }
 
-OrderStep1.propTypes = {
+OrderStep2.propTypes = {
   options: PropTypes.object.isRequired,
   selectedProductId: PropTypes.string
 };
 
-export default OrderStep1;
+export default OrderStep2;

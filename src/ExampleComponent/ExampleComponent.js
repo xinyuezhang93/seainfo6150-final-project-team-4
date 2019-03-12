@@ -101,7 +101,7 @@ const ExampleComponent = ({ options, products, selectedOptions, setProductOption
         value={selectedOptions.hoodOrnament}
         onChange={setProductOption.bind(null, 'hoodOrnament')}>
         {
-          options.hoodOrnament.values.map(({ id }) =>
+          Object.values(options.hoodOrnament).map(({ id }) =>
             <option key={id} value={id}>{capitalize(id)}</option>
           )
         }
@@ -118,7 +118,7 @@ const ExampleComponent = ({ options, products, selectedOptions, setProductOption
         value={selectedOptions.trunkMonkey}
         onChange={setProductOption.bind(null, 'trunkMonkey')}>
         {
-          options.trunkMonkey.values.map(({ id }) =>
+          Object.values(options.trunkMonkey).map(({ id }) =>
             <option key={id} value={id}>{capitalize(id)}</option>
           )
         }

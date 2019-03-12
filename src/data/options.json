@@ -13,7 +13,9 @@
     "requirements": {
       "sportsCar": 2,
       "limousine": 8,
-      "fireEngine": 2
+      "fireEngine": 2,
+      "maximumNum": 10,
+      "minimumNum": 1
     }
   },
   "interiorFabricColor": {
@@ -42,7 +44,8 @@
   "numExhausts": {
     "id": "numExhausts",
     "name": "Number of Exhausts",
-    "maximumNum": 4
+    "maximumNum": 4,
+    "minimumNum": 1
   },
   "hasTintedWindows": {
     "id": "hasTintedWindows",
@@ -112,16 +115,40 @@
   "hoodOrnament": {
     "id": "hoodOrnament",
     "name": "Hood Ornament",
-    "values": [
-      { "id": "battleship", "img": "url" },
-      { "id": "boot", "img": "url" },
-      { "id": "iron", "img": "url" },
-      { "id": "racecar", "img": "url" },
-      { "id": "dog", "img": "url" },
-      { "id": "thimble", "img": "url" },
-      { "id": "hat", "img": "url" },
-      { "id": "wheelbarrow", "img": "url" }
-    ]
+    "values": {
+      "battleship": {
+        "id": "battleship",
+        "img": "/assets/img/hood-ornament/battleship.jpg"
+      },
+      "boot": {
+        "id": "boot",
+        "img": "/assets/img/hood-ornament/boot.jpg"
+      },
+      "iron": {
+        "id": "iron",
+        "img": "/assets/img/hood-ornament/iron.jpg"
+      },
+      "racecar": {
+        "id": "racecar",
+        "img": "/assets/img/hood-ornament/racecar.jpg"
+      },
+      "dog": {
+        "id": "dog",
+        "img": "/assets/img/hood-ornament/dog.jpg"
+      },
+      "thimble": {
+        "id": "thimble",
+        "img": "/assets/img/hood-ornament/thimble.jpg"
+      },
+      "hat": {
+        "id": "hat",
+        "img": "/assets/img/hood-ornament/hat.jpg"
+      },
+      "wheelbarrow": {
+        "id": "wheelbarrow",
+        "img": "/assets/img/hood-ornament/wheelbarrow.jpg"
+      }
+    }
   },
   "engine": {
     "id": "engine",
@@ -147,13 +174,43 @@
   "trunkMonkey": {
     "id": "trunkMonkey",
     "name": "Trunk Monkey",
-    "values": [
-      { "id": "capuchin", "img": "url" },
-      { "id": "spider", "img": "url" },
-      { "id": "rhesus", "img": "url" },
-      { "id": "mandrill", "img": "url" },
-      { "id": "baboon", "img": "url" }
-    ]
+    "values": {
+      "capuchin": {
+        "id": "capuchin",
+        "img": {
+          "sm": "/assets/img/trunk-monkey/capuchin-sm.jpg",
+          "lg": "/assets/img/trunk-monkey/capuchin-lg.jpg"
+        }
+      },
+      "spider": {
+        "id": "spider",
+        "img": {
+          "sm": "/assets/img/trunk-monkey/spider-sm.jpg",
+          "lg": "/assets/img/trunk-monkey/spider-lg.jpg"
+        }
+      },
+      "rhesus": {
+        "id": "rhesus",
+        "img": {
+          "sm": "/assets/img/trunk-monkey/rhesus-sm.jpg",
+          "lg": "/assets/img/trunk-monkey/rhesus-lg.jpg"
+        }
+      },
+      "mandrill": {
+        "id": "mandrill",
+        "img": {
+          "sm": "/assets/img/trunk-monkey/mandrill-sm.jpg",
+          "lg": "/assets/img/trunk-monkey/mandrill-lg.jpg"
+        }
+      },
+      "baboon": {
+        "id": "baboon",
+        "img": {
+          "sm": "/assets/img/trunk-monkey/baboon-sm.jpg",
+          "lg": "/assets/img/trunk-monkey/baboon-lg.jpg"
+        }
+      }    
+    }
   },
   "floormatsColor": {
     "id": "floormatsColor",

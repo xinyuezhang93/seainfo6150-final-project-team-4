@@ -5,14 +5,18 @@
     "year": 2018,
     "available": true,
     "price": 4000,
-    "sale": 2000
+    "sale": 2000,
+    "title": "2018 Sedan",
+    "description": "The new version of the Sedan is a dream!"
   },
   "9029c82433e5": {
     "id": "9029c82433e5",
     "categoryId": "sedan",
     "year": 2016,
     "available": true,
-    "price": 7000
+    "price": 7000,
+    "title": "2016 Sedan",
+    "description": "Classic 2016 Sedan is still a treat!"
   },
   "e2b6c98cf5c5": {
     "id": "e2b6c98cf5c5",
@@ -20,36 +24,46 @@
     "year": 2015,
     "available": true,
     "price": 4000,
-    "sale": 2000
+    "sale": 2000,
+    "title": "2015 Sedan",
+    "description": "We love the 2015 Sedan for its sleek lines."
   },
   "84902cf57bb4": {
     "id": "84902cf57bb4",
     "categoryId": "truck",
-    "year": 2016,
+    "year": 2017,
     "available": true,
-    "price": 8000
+    "price": 8000,
+    "title": "2017 Truck",
+    "description": "Our 2017 Truck has all the right moves!"
   },
   "cb37df7ebc08": {
     "id": "cb37df7ebc08",
     "categoryId": "truck",
     "year": 2016,
     "available": true,
-    "price": 6000
+    "price": 6000,
+    "title": "2016 Truck",
+    "description": "2016 Truck is the gift that keeps on giving!"
   },
   "d0d6ce61e8cc": {
     "id": "d0d6ce61e8cc",
     "categoryId": "sportsCar",
     "year": 2018,
     "available": true,
-    "price": 15000
+    "price": 15000,
+    "title": "2018 Sports Car",
+    "description": "The new 2018 Sports Car will leave the competition in the dust."
   },
   "14d17e68ec41": {
     "id": "14d17e68ec41",
     "categoryId": "suv",
-    "year": 2017,
+    "year": 2018,
     "available": false,
     "price": 18000,
-    "sale": 14000
+    "sale": 14000,
+    "title": "2018 SUV",
+    "description": "2018 SUV is out of sight!"
   },
   "fbf8f885942f": {
     "id": "fbf8f885942f",
@@ -57,7 +71,9 @@
     "year": 2017,
     "available": false,
     "price": 12000,
-    "sale": 11000
+    "sale": 11000,
+    "title": "2017 SUV",
+    "description": "2017 SUV still performs under pressure."
   },
   "30f8d6a2956e": {
     "id": "30f8d6a2956e",
@@ -65,7 +81,9 @@
     "year": 2015,
     "available": false,
     "price": 18000,
-    "sale": 14000
+    "sale": 14000,
+    "title": "2015 SUV",
+    "description": "2015 SUV is sure to be a classic for many years to come."
   },
   "d9efbc4e56c9": {
     "id": "d9efbc4e56c9",
@@ -73,28 +91,36 @@
     "year": 2015,
     "available": true,
     "price": 6000,
-    "sale": 3000
+    "sale": 3000,
+    "title": "2015 Station Wagon",
+    "description": "2015 Station Wagon can get you from here to there in style!"
   },
   "1c2d9303a50f": {
     "id": "1c2d9303a50f",
     "categoryId": "jeep",
     "year": 2016,
     "available": true,
-    "price": 6000
+    "price": 6000,
+    "title": "2016 Jeep",
+    "description": "Our classic 2016 Jeep is rugged and built to last!"
   },
   "c56a5eb53851": {
     "id": "c56a5eb53851",
     "categoryId": "limousine",
     "year": 2015,
     "available": false,
-    "price": 20000
+    "price": 20000,
+    "title": "2015 Limousine",
+    "description": "Getting you there in style since 2015!"
   },
   "4d194f3740de": {
     "id": "4d194f3740de",
     "categoryId": "limousine",
     "year": 2016,
     "available": true,
-    "price": 21000
+    "price": 21000,
+    "title": "2016 Limousine",
+    "description": "2016 Limousine is head and shoulders above the competition."
   },
   "3530986f4eb0": {
     "id": "3530986f4eb0",
@@ -102,20 +128,26 @@
     "year": 2018,
     "available": true,
     "price": 10000,
-    "sale": 4000
+    "sale": 4000,
+    "title": "2018 Taxi",
+    "description": "We are very excited about the 2018 Taxi!"
   },
   "ef34c088f22b": {
     "id": "ef34c088f22b",
     "categoryId": "taxi",
     "year": 2015,
     "available": true,
-    "price": 9000
+    "price": 9000,
+    "title": "2015 Taxi",
+    "description": "Yellow and shiny and still number one!"
   },
   "3530986f4eb0": {
     "id": "3530986f4eb0",
     "categoryId": "fireEngine",
     "year": 2016,
     "available": true,
-    "price": 40000
+    "price": 40000,
+    "title": "2016 Fire Engine",
+    "description": "2016 Fire Engine is built for serious performance."    
   }
 }

@@ -9,7 +9,7 @@ const Products = ({ categories, products }) => {
       <div key={product.id}>
           <img src={category.img.sm} />
           <Link to={`/products/${product.categoryId}/${product.id}`}>
-            {`${product.year}`}
+            {product.title}
           </Link>
       </div>
     );

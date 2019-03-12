@@ -17,9 +17,48 @@ export default (
 ) => {
   switch (action.type) {
     case 'SELECT_PRODUCT':
+      let selectedOptions;
+
+      const selectedProduct = state.products[action.payload.id];
+      switch (selectedProduct.categoryId) {
+        case 'limousine':
+          selectedOptions = {
+            numSeats: 8
+          }
+          break;
+        case 'sportsCar':
+          selectedOptions = {
+            numSeats: 2
+          }
+          break;
+        case 'taxi':
+          selectedOptions = {
+            color: '#ffff00'
+          }
+          break;
+        case 'fireEngine':
+          selectedOptions = {
+            color: '#ff0000',
+            numSeats: 2,
+            hasTintedWindows: false,
+            hasRadio: false,
+            hasCigaretteLighters: false
+          }
+          break;
+        case 'jeep':
+          selectedOptions = {
+            hasTintedWindows: false,
+            hasAirConditioning: false
+          }
+          break;
+        default:
+          selectedOptions = {}
+      }
+
       return {
         ...state,
-        selectedProductId: action.payload.id
+        selectedProductId: action.payload.id,
+        selectedOptions
       }
     case 'VIEW_PRODUCT':
       return {
@@ -36,6 +75,14 @@ export default (
         ...state,
         selectedOptions: {
           ...state.selectedOptions,
+          ...action.payload
+        }
+      }
+    case 'SET_INFO':
+      return {
+        ...state,
+        userInfo: {
+          ...state.userInfo,
           ...action.payload
         }
       }

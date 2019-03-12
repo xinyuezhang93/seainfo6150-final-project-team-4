@@ -10,6 +10,11 @@ export const viewProduct = ({ id }) => ({
  payload: { id }
 });
 
+export const setUserInfo = ({ id, e }) => (dispatch, getState) => {
+  const value = e.target.value;
+  dispatch(setInfo({ id, value }));
+}
+
 export const setProductOption = ({ id, e }) => (dispatch, getState) => {
   dispatch(removeError());
 
@@ -120,6 +125,13 @@ const setOption = ({ id, value }) => ({
   }
 });
 
+const setInfo = ({ id, value }) => ({
+  type: 'SET_INFO',
+  payload: {
+    [`${id}`]: value
+  }
+});
+
 const normalizeBoolean = (value) => {
   return value === 'on' || value === 'yes' || value;
 }
@@ -136,8 +148,17 @@ const setColor = (color) => (dispatch, getState) => {
 const setNumSeats = (numSeats) => (dispatch, getState) => {
   const { options, products, selectedProductId } = getState();
   const selectedProduct = products[selectedProductId];
+  const maximumNumSeats = options.numSeats.requirements.maximumNum;
+  const minimumNumSeats = options.numSeats.requirements.minimumNum;
+
   if (Object.keys(options.numSeats.requirements).includes(selectedProduct.type)) {
     numSeats = options.numSeats.requirements[selectedProduct.type];
+  }
+  if (numSeats > maximumNumSeats) {
+    dispatch(setError(`Vehicles can have a maximum of ${maximumNumSeats} seats.`));
+  }
+  if (numSeats < minimumNumSeats) {
+    dispatch(setError(`Vehicles can have a minimum of ${minimumNumSeats} seats.`));
   }
   dispatch(setOption({ id: 'numSeats', value: numSeats }));
 }
@@ -170,9 +191,13 @@ const setHasGPS = (hasGPS) => (dispatch, getState) => {
 const setNumExhausts = (numExhausts) => (dispatch, getState) => {
   const { options } = getState();
   const maximumNumExhausts = options.numExhausts.requirements.maximumNum;
+  const minimumNumExhausts = options.numExhausts.requirements.minimumNum;
 
   if (numExhausts > maximumNumExhausts) {
-    throw new Error(`Vehicles can have a maximum of ${maximumNumExhausts} exhausts.`);
+    dispatch(setError(`Vehicles can have a maximum of ${maximumNumExhausts} exhausts.`));
+  }
+  if (numExhausts < minimumNumExhausts) {
+    dispatch(setError(`Vehicles can have a minimum of ${minimumNumExhausts} exhausts.`));
   }
 
   dispatch(setOption({ id: 'numExhausts', value: numExhausts }));
@@ -187,7 +212,7 @@ const setHasTintedWindows = (hasTintedWindows) => (dispatch, getState) => {
     hasTintedWindows = get(options.hasTintedWindows.requirements, selectedProduct.type)
 
     if (!hasTintedWindows) {
-      throw new Error('The selected vehicle does not support tinted windows.');
+      dispatch(setError('The selected vehicle does not support tinted windows.'));
     }
   }
 
@@ -250,6 +275,9 @@ const setNumCupholders = (numCupholders) => (dispatch, getState) => {
   if (numCupholders > maximumNumCupholders) {
     dispatch(setError(`Vehicles can have a maximum of ${maximumNumCupholders} cupholders.`));
   }
+  if (numCupholders < 0) {
+    dispatch(setError(`Vehicles cannot have negative number of cupholders.`));
+  }
   dispatch(setOption({ id: 'numCupholders', value: numCupholders }));
 }
 
@@ -311,7 +339,7 @@ const setHasAirConditioning = (hasAirConditioning) => (dispatch, getState) => {
     hasAirConditioning = get(options.hasAirConditioning.requirements, selectedProduct.type)
 
     if (!hasAirConditioning) {
-      dispatch(setError('The selected vehicle does not support tinted windows.'));
+      dispatch(setError('The selected vehicle does not support air conditioning.'));
     }
   }
 
@@ -359,8 +387,12 @@ const setMonogram = (monogram) => (dispatch, getState) => {
   const { options } = getState();
   const maximumNumMonogramLetters = options.monogram.requirements.maximumNum;
 
-  if (monogram.length > maximumNumMonogramLetters) {
-    dispatch(setError(`Vehicles can have a maximum of ${maximumNumMonogramLetters} letters in the monogram.`));
+  if (!(/[a-zA-Z]/).test(monogram)) {
+    dispatch(setError(`Monograms can only be letters`));
+  }
+
+  if (monogram.length < maximumNumMonogramLetters || monogram.length > maximumNumMonogramLetters) {
+    dispatch(setError(`Vehicles must have ${maximumNumMonogramLetters} letters in the monogram.`));
   }
   dispatch(setOption({ id: 'monogram', value: monogram }));
 }

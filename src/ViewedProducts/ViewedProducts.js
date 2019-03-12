@@ -7,10 +7,10 @@ const ViewedProducts = ({ categories, products }) => {
     return null;
   }
 
-  return products.slice(0,5).map(product => {
+  return products.slice(0,5).map((product, index) => {
     const category = categories[product.categoryId];
     return (
-      <div key={product.id}>
+      <div key={`${product.id}-${index}`}>
         <Link to={`/products/${category.id}/${product.id}`}>
           <img src={category.img.sm} />
         </Link>

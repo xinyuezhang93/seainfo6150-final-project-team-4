@@ -6,6 +6,8 @@ const TotalPrice = ({ options, selectedOptions, product }) => {
     return null;
   }
 
+  let price = product.sale || product.price;
+
   const premiumOptionsIds = new Set(Object.values(options).filter(option => option.premium).map(option => option.id));
 
   const selectedOptionsIds = new Set (Object.keys(selectedOptions));
@@ -15,7 +17,7 @@ const TotalPrice = ({ options, selectedOptions, product }) => {
 
   return (
     <div>
-      <span>Total:</span> { product.price + [...selectedPremiumOptionsIds].length*50 }
+      <span>Total:</span> { price + [...selectedPremiumOptionsIds].length*50 }
     </div>
   );
 };

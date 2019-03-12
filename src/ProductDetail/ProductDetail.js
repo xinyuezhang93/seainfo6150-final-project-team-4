@@ -12,12 +12,17 @@ class ProductDetail extends PureComponent {
       product,
       selectProductId
     } = this.props;
-    
+
     const category = categories[product.categoryId];
     return (
       <div>
-        <img src={category.img.sm} />
+        <span>{product.title}</span>
+        <img src={category.img.lg} />
+
+        {/* start order button */}
         <Link to="/order/1" onClick={selectProductId.bind(null, product.id)}>Order</Link>
+        {/* end order button */}
+
       </div>
     );
   }

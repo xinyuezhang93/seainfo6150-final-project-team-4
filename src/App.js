@@ -3,9 +3,15 @@ import { connect } from 'react-redux'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import styles from './App.module.css';
 
-import { selectProductId, setProductOption, viewProduct } from './actions/actions';
+import {
+  selectProductId,
+  setProductOption,
+  setUserInfo,
+  viewProduct
+} from './actions/actions';
 
 
+// components
 import ExampleComponent from './ExampleComponent/ExampleComponent';
 import AllProducts from './AllProducts/AllProducts';
 import Categories from './Categories/Categories';
@@ -13,33 +19,47 @@ import CategoryProducts from './CategoryProducts/CategoryProducts';
 import Error from './Error/Error';
 import ProductDetail from './ProductDetail/ProductDetail';
 import ViewedProducts from './ViewedProducts/ViewedProducts';
+import OrderStep1 from './Order/OrderStep1';
+import OrderStep2 from './Order/OrderStep2';
+import Summary from './Order/Summary';
+import ThankYou from './Order/ThankYou';
 
 let App = (props) => (
   <Router>
     <div className={styles.container}>
+      {/* start example of link to route */}
       <Link to='/'>Home</Link>
+      {/* end example of link to route */}
 
+      {/* start list of product category links */}
       <Categories categories={Object.values(props.categories)} />
+      {/* end list of product category links */}
+
+
+      {/* start 5 most recently viewed products */}
       <ViewedProducts
         categories={props.categories}
         products={
           props.viewedProducts.map(productId => props.products[productId])
         }
       />
+      {/* end 5 most recently viewed products */}
 
       <main>
-        { props.error && <Error error={props.error} /> }
+        {/* start error display -- I suggest you leave this here */}
+        {
+          props.error && <Error error={props.error} />
+        }
+        {/* end error display */}
+
         <Switch>
-          <Route
-            exact path='/'
-            render={() => <ExampleComponent {...props} />}
-          />
-          {/*
-            <Route
-              exact path='/'
-              render={() => <Home {...props} />}
-            />
+        {/*
+
           */}
+          <Route
+          exact path='/'
+          render={() => <ExampleComponent {...props} />}
+          />
             <Route
               exact path='/products'
               render={() => {
@@ -84,29 +104,36 @@ let App = (props) => (
                 );
               }}
             />
+            <Route
+              exact path='/order/1'
+              render={() => <OrderStep1 {...props} />}
+            />
+            <Route
+              exact path='/order/2'
+              render={() => <OrderStep2 {...props} />}
+            />
+            <Route
+              exact path='/order/summary'
+              render={() => <Summary {...props} />}
+            />
+            <Route
+              exact path='/order/thank-you'
+              render={() => <ThankYou />}
+            />
             {/*
+
               <Route
-                exact path='/order/1'
-                render={() => <OrderStep1 {...props} />}
+              exact path='/about'
+              render={() => <About {...props} />}
               />
               <Route
-                exact path='/order/2'
-                render={() => <OrderStep2 {...props} />}
+              exact path='/contact'
+              render={() => <Contact {...props} />}
               />
               <Route
-                exact path='/order/3'
-                render={() => <OrderStep3 {...props} />}
+              render={() => <NotFound {...props} />}
               />
-              <Route
-                exact path='/about'
-                render={() => <About {...props} />}
-              />
-              <Route
-                exact path='/contact'
-                render={() => <Contact {...props} />}
-              />
-              <Route component={NotFound} />
-            */}
+              */}
         </Switch>
       </main>
     </div>
@@ -120,6 +147,9 @@ App = connect(
       selectProductId: (productId, e) => dispatch(selectProductId({ id: productId })),
       setProductOption: (optionId, e) => {
         dispatch(setProductOption({ id: optionId, e }))
+      },
+      setUserInfo: (infoId, e) => {
+        dispatch(setUserInfo({ id: infoId, e }))
       },
       viewProduct: (productId) => dispatch(viewProduct({ id: productId }))
     }
