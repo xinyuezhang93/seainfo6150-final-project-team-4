@@ -89,10 +89,10 @@ There are already some product-related components built for you to use in your p
 * CategoryProducts -- display products available for the categoryId in the route
 * ProductDetail -- display a single product based on the categoryId and productId in the route
 
-###AllProducts and CategoryProducts page
+### AllProducts and CategoryProducts page
 These pages **must** use grid or flex to display the products available.
 
-###ProductDetail page
+### ProductDetail page
 You must display the following pieces of data:
 * large ("lg") category image (from `src/data/categories.json`) -- this is already implemented but needs styling
 * ID number
@@ -123,81 +123,81 @@ All of the pages of the site are available via components controlled by a router
 
 There is already a router implemented with the following routes in place -- **not all of these routes have components built yet**.
 
-####`/`
+#### `/`
 corresponds to `http://localhost:3000/` and the Home component; the homepage of the website.
 
-####`/products`
+#### `/products`
 corresponds to `http://localhost:3000/products` and the AllProducts component; the full product listing.
 
-####`/products/:category`
+#### `/products/:category`
 corresponds to a route like `http://localhost:3000/products/sedan` and the CategoryProducts component; the product listing for a specific category. *The category must be supplied in the URL or the route will not be matched.*
 
 ####`/products/:category/:id`
 corresponds to a route like `http://localhost:3000/products/sedan/12345` and the ProductDetail component; the product listing for a specific product. *The category and product ids must be supplied in the URL or the route will not be matched.*
 
-####`/order/1`
+#### `/order/1`
 corresponds to `http://localhost:3000/order/1` and the Order/OrderStep1 component; screen 1 in the order flow.
 
-####`/order/2`
+#### `/order/2`
 corresponds to `http://localhost:3000/order/2` and the Order/OrderStep2 component; screen 2 in the order flow.
 
-####`/order/summary`
+#### `/order/summary`
 corresponds to `http://localhost:3000/order/summary` and the Order/Summary component; the summary screen of the order flow.
 
-####`/order/thank-you`
+#### `/order/thank-you`
 corresponds to `http://localhost:3000/order/thank-you` and the Order/ThankYou component; the final submit screen of the order flow.
 
-####`/about`
+#### `/about`
 corresponds to `http://localhost:3000/about` and the About component; the about page of the website.
 
-####`/contact`
+#### `/contact`
 corresponds to `http://localhost:3000/contact` and the Contact component; the contact page of the website.
 
-####`/404`
+#### `/404`
 corresponds to `http://localhost:3000/404` and the NotFound component; the 404 page of the website.
 
 
-###Layout
+### Layout
 The website should be both responsive and adaptive; you must implement at least 2 breakpoints where the layout changes in some obvious fashion.
 
-###404 Not found
+### 404 Not found
 The website should display an attractive, usable and accessible 404 page when visiting a non-matched route.
 
-###Navigation
+### Navigation
 The website must display 2 separate navigation menus on every page.
 
-####Navigation 1 links:
+#### Navigation 1 links:
 *Homepage
 *Products
 *About
 *Contact
 
-####Navigation 2 links:
+#### Navigation 2 links:
 The product categories displayed by using the Categories component
 
 Where you choose to place these 2 navigation menus is up to you, but they should reflect good principles of usability.
 
-###Viewed Products
+### Viewed Products
 The website must display a list of the images of the 5 most recent products viewed on every page.
 
 This component has already been implemented and is being imported in `App.js`. You shouldn't need to do anything with the logic, but it does need styling.
 
-###Homepage
+### Homepage
 Your website must feature a homepage for **Vehiclr**. The name **Vehiclr** must appear on the homepage and in the title of every page of the website.
 
 Your homepage (as well as the rest of the site) should use good principles of usability and accessibility discussed in class.
 
-###About
+### About
 Your website must feature an "About" page for **Vehiclr**.
 
 Your about page should use good principles of usability and accessibility discussed in class.
 
-###Contact
+### Contact
 Your website must feature a "Contact" page for **Vehiclr**.
 
 Your contact page should use good principles of usability and accessibility discussed in class.
 
-###Order flow
+### Order flow
 Your order flow **must** have 3 screens/steps and collect user options and information as detailed below. The logic and routing to move from one screen to the next has already been implemented for you.
 
 ### Options
@@ -220,14 +220,14 @@ Some options have error conditions already implemented. If the value is invalid,
 
 Here is the list of options/information that you must gather in the order flow with explanations and how to store the information in state:
 
-#####Color (required)
+##### Color (required)
 A user must select a hex/rgb color for their vehicle, with 2 exceptions:
 * Taxis can only be yellow (#ffff0)
 * Fire engines can only be red (#ff0000)
 
 This logic is already implemented. On your color input, add the following handler `onChange={setProductOption.bind(null, 'color')}`
 
-#####Number of seats (required)
+##### Number of seats (required)
 A user must select a number of seats. The value must be a number and must be less than or equal to 10 and greater than or equal to 1, with 3 exceptions:
 * Sports cars can only have 2 seats
 * Limousines can only have 8 seats
@@ -237,39 +237,39 @@ A user must select a number of seats. The value must be a number and must be les
 
 This logic is already implemented. On your seat number input, add the following handler `onChange={setProductOption.bind(null, 'numSeats')}`
 
-#####Interior fabric color (required)
+##### Interior fabric color (required)
 A user must select one of the following colors: tan, gray, black, red, maroon, green
 
 On your interior fabric color input, add the following handler `onChange={setProductOption.bind(null, 'interiorFabricColor')}`
 
-#####Dashboard color (required)
+##### Dashboard color (required)
 A user must select one of the following colors: tan, gray, black, red, maroon, green
 
 On your dashboard color input, add the following handler `onChange={setProductOption.bind(null, 'dashboardColor')}`
 
-#####Dashboard lights color (required)
+##### Dashboard lights color (required)
 A user may select any hex/rgb color for their dashboard lights.
 
 On your color input, add the following handler `onChange={setProductOption.bind(null, 'dashboardLightsColor')}`
 
-#####Hubcaps material (required)
+##### Hubcaps material (required)
 A user may select one of the following hubcaps materials: chrome, steel, plastic
 
 On your hubcaps materials input, add the following handler `onChange={setProductOption.bind(null, 'hubcapsMaterial')}`
 
-#####GPS
+##### GPS
 A user may select whether they want GPS or not.
 
 On your GPS input, add the following handler `onChange={setProductOption.bind(null, 'hasGPS')}`
 
-#####Number of exhausts (required)
+##### Number of exhausts (required)
 A user must select a number of exhausts. The value must be a number and must be less than or equal to 4 and greater than or equal to 1.
 
 **If the number is greater than 10 or less than 1, an error will be displayed.**
 
 This logic is already implemented. On your exhausts number input, add the following handler `onChange={setProductOption.bind(null, 'numExhausts')}`
 
-#####Tinted windows
+##### Tinted windows
 A user may select if they want tinted windows or not, with 2 exceptions:
 * Fire engines cannot have tinted windows.
 * Jeeps cannot have tinted windows.
@@ -278,7 +278,7 @@ A user may select if they want tinted windows or not, with 2 exceptions:
 
 This logic is already implemented. On your tinted windows input, add the following handler `onChange={setProductOption.bind(null, 'hasTintedWindows')}`
 
-#####Radio
+##### Radio
 A user may select if they want a radio or not, with 1 exception:
 * Fire engines cannot have radios.
 
@@ -298,12 +298,12 @@ The radio type options for the various categories can be seen in the `values` un
 
 This logic is already implemented. On your radio type input, add the following handler `onChange={setProductOption.bind(null, 'radioType')}`
 
-#####Glove box
+##### Glove box
 A user may select whether they want a glove box or not.
 
 On your glove box input, add the following handler `onChange={setProductOption.bind(null, 'hasGloveBox')}`
 
-#####Cupholders
+##### Cupholders
 A user may select whether they want cupholders or not.
 
 On your cupholders input, add the following handler `onChange={setProductOption.bind(null, 'hasCupholders')}`
@@ -312,7 +312,7 @@ If a user chooses to add cupholders, they then need to choose how many.
 
 On your cupholders number input, add the following handler `onChange={setProductOption.bind(null, 'numCupholders')}`
 
-#####Cigarette lighters
+##### Cigarette lighters
 A user may select if they want cigarette lighters or not, with 1 exception:
 * Fire engines cannot have cigarette lighters.
 
@@ -324,17 +324,17 @@ If a user chooses to add cigarette lighters for a vehicle that can support it, t
 
 On your cigarette lighters number input, add the following handler `onChange={setProductOption.bind(null, 'numCigaretteLighters')}`
 
-#####Spare tire (required)
+##### Spare tire (required)
 A user must select one of the following spare tire sizes: S, M, L, XL
 
 On your spare tire input, add the following handler `onChange={setProductOption.bind(null, 'spareTire')}`
 
-#####Engine (required)
+##### Engine (required)
 A user must select one of the following spare tire sizes: 4-cylinder, 6-cylinder, 12-cylinder
 
 On your engine input, add the following handler `onChange={setProductOption.bind(null, 'engine')}`
 
-#####Air conditioning
+##### Air conditioning
 A user may select if they want air conditioning or not, with 1 exception:
 * Jeeps cannot have air conditioning.
 
@@ -342,7 +342,7 @@ A user may select if they want air conditioning or not, with 1 exception:
 
 This logic is already implemented. On your seat number input, add the following handler `onChange={setProductOption.bind(null, 'hasAirConditioning')}`
 
-#####Floormats color (required)
+##### Floormats color (required)
 A user must select any hex/rgb color for their floormats color.
 
 On your floormats color input, add the following handler `onChange={setProductOption.bind(null, 'floormatsColor')}`
@@ -353,7 +353,7 @@ There are 3 options that are premium and add an extra $50 to the base price of t
 
 The logic for implementing the additional money and calculating the total price has already been implemented and will be displayed properly if you use the `Order/TotalPrice` component.
 
-#####Hood ornament
+##### Hood ornament
 A user may select if they want a hood ornament or not.
 
 On your hood ornament input, add the following handler `onChange={setProductOption.bind(null, 'hasHoodOrnament')}`
@@ -366,7 +366,7 @@ A user much select one of the following types: battleship, boot, cannon, horse, 
 
 On your hood ornament type input, add the following handler `onChange={setProductOption.bind(null, 'hoodOrnament')}`
 
-#####Trunk monkey
+##### Trunk monkey
 A user may select if they want a trunk monkey or not.
 
 On your trunk monkey input, add the following handler `onChange={setProductOption.bind(null, 'hasTrunkMonkey')}`
@@ -379,7 +379,7 @@ A user much select one of the following types: capuchin, spider, rhesus, macaque
 
 On your hood ornament type input, add the following handler `onChange={setProductOption.bind(null, 'trunkMonkey')}`
 
-#####Monogrammed steering wheel cover
+##### Monogrammed steering wheel cover
 A user may select if they want a monogrammed steering wheel cover or not.
 
 On your monogrammed steering wheel cover input, add the following handler `onChange={setProductOption.bind(null, 'hasMonogrammedSteeringWheelCover')}`
