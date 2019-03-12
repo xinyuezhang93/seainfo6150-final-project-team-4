@@ -402,7 +402,7 @@ On your hood ornament input, add the following handler
 
 If a user chooses to add a hood ornament, they then need to choose which one.
 
-A user much select one of the following types: battleship, boot, cannon, horse, iron, racecar, dog, thimble, top hat, wheelbarrow
+A user much select one of the following types: battleship, boot, cannon, horse, iron, racecar, dog, thimble, hat, wheelbarrow
 
 **These hood ornaments can be found in `values` under `hoodOrnament` in `src/data/options.json`. Each has a corresponding image that must be displayed along with the option.**
 
