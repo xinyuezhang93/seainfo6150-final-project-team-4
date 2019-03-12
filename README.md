@@ -10,7 +10,43 @@ Your role is to coordinate with the other members of your team to build the UI p
 
 You are encouraged to do research and look at other websites that sell products to get ideas about how to present the **Vehiclr** products and order flow.
 
-The website will be presented to the rest of the class on **Wednesday, April 17, 2019**.
+## Schedule
+
+### Week 9, March 13
+You will be split into teams and review project.
+
+### Week 10, March 20
+With your team, you will work on wireframes, user flows, sitemap for the website.
+
+These pieces should be shared in a document or emailed to a.bingham@northeastern.edu **by 2pm EDT, March 27** (ie, the beginning of Week 11 class).
+
+#### Wireframes
+You must have wireframes for
+* Homepage
+* About
+* Contact
+* 404
+* Products
+* Product Detail
+* Order flow (all screens)
+
+#### User flows
+You must come up with at least 2 user flows you want your users to complete
+
+#### Site map
+You must create a sitemap showing all the pages of the site
+
+### Week 11, March 27
+With your team, you will work on project implementation
+
+### Week 12, April 3
+With your team, you will work on project implementation
+
+### Week 13, April 10
+In class, we will conduct usability testing on each others' websites and provide feedback that teams can use to finalize their projects.
+
+### Week 14, April 17
+Each team will demonstrate their final website to the rest of the class. Personal journals/writeups should be shared in a document or emailed to a.bingham@northeastern.edu **by midnight EDT, April 18**.
 
 ## Rubric
 This project is worth 30% of your final grade.
@@ -21,7 +57,6 @@ This project is worth 30% of your final grade.
 Projects will be evaluated on a 0-100 scale for each of 5 sections. Each section score will be multiplied by .20 and the 5 sections will be added together to calculate the final 0-100 score.
 
 <table>
-  <caption>Rubric</caption>
   <thead>
     <tr>
       <th></th>
