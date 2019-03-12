@@ -28,7 +28,7 @@ You must have wireframes for
 * 404
 * Products
 * Product Detail
-* Order flow (all screens)
+* Order flow (step 1, step 2, summary, thank you)
 
 #### User flows
 You must come up with at least 2 user flows you want your users to complete
