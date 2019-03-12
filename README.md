@@ -132,7 +132,7 @@ corresponds to `http://localhost:3000/products` and the AllProducts component; t
 #### `/products/:category`
 corresponds to a route like `http://localhost:3000/products/sedan` and the CategoryProducts component; the product listing for a specific category. *The category must be supplied in the URL or the route will not be matched.*
 
-####`/products/:category/:id`
+#### `/products/:category/:id`
 corresponds to a route like `http://localhost:3000/products/sedan/12345` and the ProductDetail component; the product listing for a specific product. *The category and product ids must be supplied in the URL or the route will not be matched.*
 
 #### `/order/1`
@@ -167,10 +167,10 @@ The website should display an attractive, usable and accessible 404 page when vi
 The website must display 2 separate navigation menus on every page.
 
 #### Navigation 1 links:
-*Homepage
-*Products
-*About
-*Contact
+* Homepage
+* Products
+* About
+* Contact
 
 #### Navigation 2 links:
 The product categories displayed by using the Categories component
@@ -391,12 +391,12 @@ On your monogram input, add the following handler `onChange={setProductOption.bi
 ### Buyer information
 During the order flow, you must collect following information about the buyer. Assume that the company will call them later to get payment information, so we do not have to gather credit card numbers insecurely, for example.
 
-*Buyer’s name
-*Buyer’s shipment address (street address, city, state, 5 digit zip code)
-*Buyer’s billing address (street address, city, state, 5 digit zip code)
-*Buyer’s phone number (10 digits - 3 digit area code + 7 digit number)
-*Buyer’s cell number (10 digits - 3 digit area code + 7 digit number)
-*Buyer’s date of birth (mm/dd/yyyy format)
+* Buyer’s name
+* Buyer’s shipment address (street address, city, state, 5 digit zip code)
+* Buyer’s billing address (street address, city, state, 5 digit zip code)
+* Buyer’s phone number (10 digits - 3 digit area code + 7 digit number)
+* Buyer’s cell number (10 digits - 3 digit area code + 7 digit number)
+* Buyer’s date of birth (mm/dd/yyyy format)
 
 All of this information is required. If a user does not fill in one of the required fields, the UI should alert them to that fact when attempting to move on in the order flow.
 
