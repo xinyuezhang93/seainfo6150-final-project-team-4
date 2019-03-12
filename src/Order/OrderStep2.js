@@ -27,8 +27,6 @@ class OrderStep2 extends Component {
       ? (<Redirect to="/order/summary" />)
       : (
       <form onSubmit={this.handleSubmit.bind(this)}>
-
-        <input type="text" onChange={setUserInfo.bind(null, 'buyerName')} />
         <fieldset>
           <input type="submit" value="Go to summary" />
         </fieldset>

@@ -28,11 +28,6 @@ class OrderStep1 extends Component {
       : (
       <form onSubmit={this.handleSubmit.bind(this)}>
         <fieldset>
-          <label htmlFor="color">Color</label>
-          <input required id="color" type="text" onChange={setProductOption.bind(null, 'color')}/>
-        </fieldset>
-
-        <fieldset>
           <input type="submit" value="Go to step 2" />
         </fieldset>
       </form>

@@ -434,7 +434,9 @@ On your monogrammed steering wheel cover input, add the following handler
 
 `onChange={setProductOption.bind(null, 'hasMonogrammedSteeringWheelCover')}`
 
-If a user chooses to add a hasMonogrammedSteeringWheelCover, they then need to enter the monogram. A monogram consists of a series of 3 letters (no more, no less).
+If a user chooses to add a hasMonogrammedSteeringWheelCover, they then need to enter the monogram. A monogram consists of a series of 3 English letters (no more, no less).
+
+**If the user tries to enter non-letters or some number of letters that is not 3, an error will be displayed.**
 
 On your monogram input, add the following handler
 
