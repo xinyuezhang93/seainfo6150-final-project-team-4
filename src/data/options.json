@@ -1,0 +1,231 @@
+{
+  "color": {
+    "id": "color",
+    "name": "Color",
+    "requirements": {
+      "fireEngine": "#ff0000",
+      "taxi": "#ffff00"
+    }
+  },
+  "numSeats": {
+    "id": "numSeats",
+    "name": "Number of Seats",
+    "requirements": {
+      "sportsCar": 2,
+      "limousine": 8,
+      "fireEngine": 2,
+      "maximumNum": 10,
+      "minimumNum": 1
+    }
+  },
+  "interiorFabricColor": {
+    "id": "interiorFabricColor",
+    "name": "Interior Fabric Color",
+    "values": ["tan","gray","black","red","maroon","green"]
+  },
+  "dashboardColor": {
+    "id": "dashboardColor",
+    "name": "Dashboard Color",
+    "values": ["tan","gray","black","red","maroon","green"]
+  },
+  "dashboardLightsColor": {
+    "id": "dashboardLightsColor",
+    "name": "Dashboard Lights Color"
+  },
+  "hubcapsMaterial": {
+    "id": "hubcapsMaterial",
+    "name": "Hubcaps Material",
+    "values": ["chrome","steel","plastic"]
+  },
+  "hasGPS": {
+    "id": "hasGPS",
+    "name": "Include GPS?"
+  },
+  "numExhausts": {
+    "id": "numExhausts",
+    "name": "Number of Exhausts",
+    "maximumNum": 4,
+    "minimumNum": 1
+  },
+  "hasTintedWindows": {
+    "id": "hasTintedWindows",
+    "name": "Include Tinted Windows?",
+    "requirements": {
+      "fireEngine": false,
+      "jeep": false
+    }
+  },
+  "hasRadio": {
+    "id": "hasRadio",
+    "name": "Include Radio?",
+    "requirements": {
+      "fireEngine": false
+    }
+  },
+  "radioType": {
+    "id": "radioType",
+    "name": "Radio Type",
+    "values": {
+      "sedan": ["basic","medium","fancy"],
+      "truck": ["medium"],
+      "sportsCar": ["medium","fancy"],
+      "suv": ["medium"],
+      "stationWagon": ["basic","medium"],
+      "jeep": ["medium"],
+      "limousine": ["medium","fancy"],
+      "taxi": ["basic","medium"]
+    }
+  },
+  "hasGloveBox": {
+    "id": "hasGloveBox",
+    "name": "Include Glove Box?"
+  },
+  "hasCupholders": {
+    "id": "hasCupholders",
+    "name": "Include Cupholders?"
+  },
+  "numCupholders": {
+    "id": "numCupholders",
+    "name": "Number of Cupholders",
+    "requirements": {
+      "maximumNum": 8
+    }
+  },
+  "hasCigaretteLighters": {
+    "id": "hasCigaretteLighters",
+    "name": "Include Cigarette Lighters?",
+    "requirements": {
+      "fireEngine": false
+    }
+  },
+  "numCigaretteLighters": {
+    "id": "numCigaretteLighters",
+    "name": "Number of Cigarette Lighters"
+  },
+  "spareTire": {
+    "id": "spareTire",
+    "name": "Spare Tire",
+    "values": ["s","m","l","xl"]
+  },
+  "hasHoodOrnament": {
+    "id": "hasHoodOrnament",
+    "name": "Include Hood Ornament?",
+    "premium": true
+  },
+  "hoodOrnament": {
+    "id": "hoodOrnament",
+    "name": "Hood Ornament",
+    "values": {
+      "battleship": {
+        "id": "battleship",
+        "img": "/assets/img/hood-ornament/battleship.jpg"
+      },
+      "boot": {
+        "id": "boot",
+        "img": "/assets/img/hood-ornament/boot.jpg"
+      },
+      "iron": {
+        "id": "iron",
+        "img": "/assets/img/hood-ornament/iron.jpg"
+      },
+      "racecar": {
+        "id": "racecar",
+        "img": "/assets/img/hood-ornament/racecar.jpg"
+      },
+      "dog": {
+        "id": "dog",
+        "img": "/assets/img/hood-ornament/dog.jpg"
+      },
+      "thimble": {
+        "id": "thimble",
+        "img": "/assets/img/hood-ornament/thimble.jpg"
+      },
+      "hat": {
+        "id": "hat",
+        "img": "/assets/img/hood-ornament/hat.jpg"
+      },
+      "wheelbarrow": {
+        "id": "wheelbarrow",
+        "img": "/assets/img/hood-ornament/wheelbarrow.jpg"
+      }
+    }
+  },
+  "engine": {
+    "id": "engine",
+    "name": "Engine",
+    "values": [
+      "4-cylinder",
+      "6-cylinder",
+      "12-cylinder"
+    ]
+  },
+  "hasAirConditioning": {
+    "id": "hasAirConditioning",
+    "name": "Include Air Conditioning?",
+    "requirements": {
+      "jeep": false
+    }
+  },
+  "hasTrunkMonkey": {
+    "id": "hasTrunkMonkey",
+    "name": "Include Trunk Monkey?",
+    "premium": true
+  },
+  "trunkMonkey": {
+    "id": "trunkMonkey",
+    "name": "Trunk Monkey",
+    "values": {
+      "capuchin": {
+        "id": "capuchin",
+        "img": {
+          "sm": "/assets/img/trunk-monkey/capuchin-sm.jpg",
+          "lg": "/assets/img/trunk-monkey/capuchin-lg.jpg"
+        }
+      },
+      "spider": {
+        "id": "spider",
+        "img": {
+          "sm": "/assets/img/trunk-monkey/spider-sm.jpg",
+          "lg": "/assets/img/trunk-monkey/spider-lg.jpg"
+        }
+      },
+      "rhesus": {
+        "id": "rhesus",
+        "img": {
+          "sm": "/assets/img/trunk-monkey/rhesus-sm.jpg",
+          "lg": "/assets/img/trunk-monkey/rhesus-lg.jpg"
+        }
+      },
+      "mandrill": {
+        "id": "mandrill",
+        "img": {
+          "sm": "/assets/img/trunk-monkey/mandrill-sm.jpg",
+          "lg": "/assets/img/trunk-monkey/mandrill-lg.jpg"
+        }
+      },
+      "baboon": {
+        "id": "baboon",
+        "img": {
+          "sm": "/assets/img/trunk-monkey/baboon-sm.jpg",
+          "lg": "/assets/img/trunk-monkey/baboon-lg.jpg"
+        }
+      }    
+    }
+  },
+  "floormatsColor": {
+    "id": "floormatsColor",
+    "name": "Floormats Color"
+  },
+  "hasMonogrammedSteeringWheelCover": {
+    "id": "hasMonogrammedSteeringWheelCover",
+    "name": "Include Monogrammed Steering Wheel Cover?",
+    "premium": true
+  },
+  "monogram": {
+    "id": "monogram",
+    "name": "Monogram",
+    "requirements": {
+      "maximumNum": 3
+    }
+  }
+}

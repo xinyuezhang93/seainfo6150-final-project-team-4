@@ -1,0 +1,74 @@
+{
+  "sedan": {
+    "id": "sedan",
+    "img": {
+      "sm": "/assets/img/product/sedan-sm.jpg",
+      "lg": "/assets/img/product/sedan-lg.jpg"
+    },
+    "name": "Sedan"
+  },
+  "truck": {
+    "id": "truck",
+    "img": {
+      "sm": "/assets/img/product/truck-sm.jpg",
+      "lg": "/assets/img/product/truck-lg.jpg"
+    },
+    "name": "Truck"
+  },
+  "sportsCar": {
+    "id": "sportsCar",
+    "img": {
+      "sm": "/assets/img/product/sportsCar-sm.jpg",
+      "lg": "/assets/img/product/sportsCar-lg.jpg"
+    },
+    "name": "Sports Car"
+  },
+  "suv": {
+    "id": "suv",
+    "img": {
+      "sm": "/assets/img/product/suv-sm.jpg",
+      "lg": "/assets/img/product/suv-lg.jpg"
+    },
+    "name": "SUV"
+  },
+  "stationWagon": {
+    "id": "stationWagon",
+    "img": {
+      "sm": "/assets/img/product/stationWagon-sm.jpg",
+      "lg": "/assets/img/product/stationWagon-lg.jpg"
+    },
+    "name": "Station Wagon"
+  },
+  "jeep": {
+    "id": "jeep",
+    "img": {
+      "sm": "/assets/img/product/jeep-sm.jpg",
+      "lg": "/assets/img/product/jeep-lg.jpg"
+    },
+    "name": "Jeep"
+  },
+  "limousine": {
+    "id": "limousine",
+    "img": {
+      "sm": "/assets/img/product/limousine-sm.jpg",
+      "lg": "/assets/img/product/limousine-lg.jpg"
+    },
+    "name": "Limousine"
+  },
+  "taxi": {
+    "id": "taxi",
+    "img": {
+      "sm": "/assets/img/product/taxi-sm.jpg",
+      "lg": "/assets/img/product/taxi-lg.jpg"
+    },
+    "name": "Taxi Cab"
+  },
+  "fireEngine": {
+    "id": "fireEngine",
+    "img": {
+      "sm": "/assets/img/product/fireEngine-sm.jpg",
+      "lg": "/assets/img/product/fireEngine-lg.jpg"
+    },
+    "name": "Fire Engine"
+  }
+}

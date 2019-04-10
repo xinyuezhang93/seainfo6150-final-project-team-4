@@ -1,0 +1,21 @@
+.subtext {
+    font-size: 20px;
+    color: sandybrown;
+    margin-bottom: 50px;
+}
+
+.thankyouLogo {
+    width: 600px;
+    height: 300px;
+    margin: 100px auto;
+}
+
+.submit {
+    margin-top: 50px;
+    width: 300px;
+    height: 60px;
+    background-color: orange;
+    color: white;
+    border-radius: 20em;
+    font-size: 1.5em;
+}

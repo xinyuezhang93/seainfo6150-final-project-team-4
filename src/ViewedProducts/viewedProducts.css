@@ -1,0 +1,19 @@
+.viewed-items-section {
+	display: inline-flex;
+	width: 10%;
+	margin: 5%;
+}
+.viewed-items-link:hover {
+	border-style: solid;
+	border-color: LightSkyBlue;
+	transition: border-width 0.1s linear;
+}
+.viewed-product-image {
+	width: 100%;
+	height: 100%;
+}
+@media screen and (max-width: 450px) {
+}
+
+@media screen and (max-width: 900px) and (min-width: 450px) {
+}

@@ -1,0 +1,9 @@
+.product-title {
+	margin-left: 25%;
+}
+.product-image-container:link {
+	display: block;
+}
+.product-image-container:visited {
+	display: none;
+}

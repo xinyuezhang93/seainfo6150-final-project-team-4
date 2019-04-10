@@ -1,0 +1,10 @@
+:global(html) {
+	font-size: 10px;
+}
+
+:global(body) {
+	font-size: 1.6em;
+}
+
+.container {
+}

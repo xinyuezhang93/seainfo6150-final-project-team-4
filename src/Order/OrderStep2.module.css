@@ -1,0 +1,80 @@
+.submit {
+    margin-top: 50px;
+    width: 300px;
+    height: 60px;
+    background-color: orange;
+    color:white;
+    border-radius: 20em;
+    font-size: 1.5em;
+}
+
+.submit:hover {
+    background-color: #ffc06c;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    margin-top:200px;
+}
+
+.title{
+    font-size: 3.5rem;
+    font-weight: 200;
+    line-height: 1.3;
+    color:#0098d1;
+}
+
+img {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wrapping {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3%;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.block {
+    margin-top: 10px;
+}
+
+.InputText {
+    outline: none;
+    border: 1px solid #ccc;
+    background-color: white;
+    font: inherit;
+    padding: 6px 10px;
+    display: block;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+.ContactData {
+    margin-top:30px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  
+  
+    padding: 10px;
+    padding-bottom: 50px;
+    box-sizing: border-box;
+}
+
+.imgLeft{
+    width: 45%;
+}
+
+.imgLeft img{
+    margin-top:0px;
+    width: 600px;
+    height: 400px;
+}

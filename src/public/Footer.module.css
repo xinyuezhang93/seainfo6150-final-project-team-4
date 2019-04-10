@@ -1,0 +1,15 @@
+.foot {
+    margin-top: 200px;
+    width: 100%;
+    height: 300px;
+    background-color: #156a99;
+    font-size: 1.5em;
+    color: silver;
+    text-align: left;
+    padding-top: 1.6%;
+}
+
+.logo{
+    display: flex;
+    flex-direction: row;
+}

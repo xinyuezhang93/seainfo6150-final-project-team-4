@@ -1,0 +1,51 @@
+.About_part img {
+	width: 60%;
+	float:inherit;
+	margin:2%;
+  height:300px;
+
+}
+.Team_part img {
+	width: 60%;
+	float:inherit;
+	margin:2%;
+  height:300px;
+
+}
+.Careers_part img {
+	width: 60%;
+	float:inherit;
+	margin:2%;
+  height:300px;
+
+}
+
+.About_part p {
+	padding: 1px;
+  margin-left: 20%;
+  background-color: #F5F5F5;
+  font-size:20px;
+  border:1px,solid,#F5F5F5;
+  width:60%;
+  height:auto;
+
+}
+.Team_part p {
+	padding: 1px;
+  margin-left: 20%;
+  background-color: #F5F5F5;
+  font-size:20px;
+  border:1px,solid,#F5F5F5;
+  width:60%;
+  height:auto;
+
+}
+.Careers_part p {
+  padding: 1px;
+  margin-left: 20%;
+  background-color: #F5F5F5;
+  font-size:20px;
+  border:1px,solid,#F5F5F5;
+  width:60%;
+  height:auto;
+}
