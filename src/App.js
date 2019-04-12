@@ -27,10 +27,6 @@ let App = props => (
 
             {/* end 5 most recently viewed products */}
             <main>
-                {/* start error display -- I suggest you leave this here */}
-                {props.error && <Error error={props.error}/>}
-                {/* end error display */}
-
                 <Switch>
                     <Route exact path="/" render={() => <Home {...props}/>}/>
                     <Route

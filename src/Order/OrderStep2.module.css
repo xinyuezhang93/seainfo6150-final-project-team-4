@@ -43,6 +43,10 @@ img {
     margin-top: 10px;
 }
 
+.block > label{
+    font-size: 15px;
+}
+
 .InputText {
     outline: none;
     border: 1px solid #ccc;

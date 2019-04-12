@@ -9,7 +9,7 @@ body {
     height: 100%;
 }
 
-.inputmargin{
+.inputmargin {
     margin-left: 5px;
 }
 
@@ -26,7 +26,6 @@ body {
     margin-top: 200px;
     width: 100%;
     height: 500px;
-    /*高度可由内容撑开*/
     min-height: calc(100% - 50px);
 }
 
@@ -55,7 +54,8 @@ body {
 
 .choosen {
     margin-top: 10%;
-    margin-left: 35%;
+    margin-left: 25%;
+    font-size: 20px;
 }
 
 .wrapping {
@@ -103,76 +103,9 @@ body {
     height: 400px;
 }
 
-.colorRed {
-    border: 2px solid #e5e5e5;
-    border-radius: 50%;
-    height: 2.0rem;
-    width: 2.0rem;
-    background-color: red;
-    margin-left: 5px;
-    color: red;
-    cursor: grab;
-}
-
-.colorGreen {
-    border: 2px solid #e5e5e5;
-    border-radius: 50%;
-    height: 2.0rem;
-    width: 2.0rem;
-    background-color: Green;
-    color: Green;
-    margin-left: 5px;
-    cursor: grab;
-}
-
-.colorBlack {
-    border: 2px solid #e5e5e5;
-    border-radius: 50%;
-    height: 2.0rem;
-    width: 2.0rem;
-    background-color: black;
-    color: black;
-    margin-left: 5px;
-    cursor: grab;
-}
-
-.colorGray {
-    border: 2px solid #e5e5e5;
-    border-radius: 50%;
-    height: 2.0rem;
-    width: 2.0rem;
-    background-color: grey;
-    color: grey;
-    margin-left: 5px;
-    cursor: grab;
-}
-
-.colorTan {
-    border: 2px solid #e5e5e5;
-    border-radius: 50%;
-    height: 2.0rem;
-    width: 2.0rem;
-    background-color: tan;
-    color: tan;
-    margin-left: 5px;
-    cursor: grab;
-}
-
-.colorMaroon {
-    border: 2px solid #e5e5e5;
-    border-radius: 50%;
-    height: 2.0rem;
-    width: 2.0rem;
-    background-color: maroon;
-    color: maroon;
-    margin-left: 5px;
-    cursor: grab;
-}
-
 .modalnone {
     display: none;
     position: relative;
-
 }
 
 .modalon {

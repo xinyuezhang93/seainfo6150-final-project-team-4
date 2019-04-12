@@ -6,7 +6,7 @@ import Header from './../public/Header';
 import Footer from '../public/Footer';
 import HoodOrnament from './HoodOrnament';
 import Monkey from './Monkey';
-import Error from './../Error/Error';
+import "./OrderStep1.css";
 let categories = require('./../data/categories.json')
 let products = require('./../data/products.json');
 
@@ -23,7 +23,9 @@ class OrderStep1 extends Component {
             monkeyOn: "no",
             cupHolderOn: "no",
             cigOn: "no",
-            mogOn: "no"
+            mogOn: "no",
+            fabricColor: 0,
+            dashboardColor: 0
         }
     }
 
@@ -31,9 +33,8 @@ class OrderStep1 extends Component {
         this.setState({submittedSuccessfully: true});
     }
 
-    purchaseHandler1 = (e) => {
+    purchaseHandler1 = () => {
         this.setState({now: 1});
-
     }
 
     purchaseHandler2 = () => {
@@ -91,17 +92,16 @@ class OrderStep1 extends Component {
     }
 
     colorHandler = (e, setProductOption) => {
-        e.target.style.border = "5px solid paleturquoise"
         setProductOption('color', e)
     }
 
-    InteriorcolorHandler = (e, setProductOption) => {
-        e.target.style.border = "5px solid paleturquoise"
+    InteriorcolorHandler = (num, e, setProductOption) => {
+        this.setState({fabricColor: num})
         setProductOption('interiorFabricColor', e)
     }
 
-    dashBoardcolorHandler = (e, setProductOption) => {
-        e.target.style.border = "5px solid paleturquoise"
+    dashBoardcolorHandler = (num, e, setProductOption) => {
+        this.setState({dashboardColor: num})
         setProductOption('dashboardColor', e)
     }
 
@@ -115,8 +115,19 @@ class OrderStep1 extends Component {
         setProductOption('floormatsColor', e)
     }
 
+    checkChar(e, setProductOption) {
+        var re = /\w{3}$/
+        if (re.test(e.target.value)) {
+            setProductOption('monogram', e)
+        } else {
+            alert("Wrong type of input");
+        }
+    }
+
     render() {
-        const {options, selectedProductId, setProductOption, error} = this.props;
+        const {options, selectedProductId, setProductOption, error, selectedOptions} = this.props;
+        let fabricColor = this.state.fabricColor;
+        let dashboardColor = this.state.dashboardColor;
         let choose;
         let seats = <input
             type="number"
@@ -125,34 +136,20 @@ class OrderStep1 extends Component {
             max="10"
             onChange={setProductOption.bind(null, 'numSeats')}/>;;
         let Tintedwindows = <select
-            name="hasTintedWindows"
+             key="hasTintedWindows"
             onChange={setProductOption.bind(null, 'hasTintedWindows')}>
             <option disabled selected value></option>
             <option value="Yes">Yes</option>
             <option value="No">No</option>
         </select>;
-        let colors = <div>
-            <input
-                className={classes.colorRed}
-                value="Red"
-                onClick={(e) => this.colorHandler(e, setProductOption)}/>
-            <input
-                className={classes.colorGreen}
-                value="Green"
-                onClick={(e) => this.colorHandler(e, setProductOption)}/>
-            <input
-                className={classes.colorBlack}
-                value="Black"
-                onClick={(e) => this.colorHandler(e, setProductOption)}/>
-            <input
-                className={classes.colorGray}
-                value="Gray"
-                onClick={(e) => this.colorHandler(e, setProductOption)}/>
-        </div>;
+        let colors = <input
+            type="color"
+            name="favcolor"
+            onChange={setProductOption.bind(null, 'color')}/>;
         let radioOnList = this.state.radioOn === "yes"
             ? <div className={classes.block}>
                     <label htmlFor="Radio">Choose your Radio Type:</label>
-                    <select name="" onChange={setProductOption.bind(null, 'radioType')}>
+                    <select name="radioType" onChange={setProductOption.bind(null, 'radioType')}>
                         <option disabled selected value></option>
                         <option value="Medium">Medium</option>
                     </select>
@@ -161,7 +158,7 @@ class OrderStep1 extends Component {
         let radioOnList1 = this.state.radioOn === "yes"
             ? <div className={classes.block}>
                     <label htmlFor="Radio">Choose your Radio Type:</label>
-                    <select name="" onChange={setProductOption.bind(null, 'radioType')}>
+                    <select key="radioType" onChange={setProductOption.bind(null, 'radioType')}>
                         <option disabled selected value></option>
                         <option value="Medium">Medium</option>
                         <option value="Fancy">Fancy</option>
@@ -171,7 +168,7 @@ class OrderStep1 extends Component {
         let radioOnList2 = this.state.radioOn === "yes"
             ? <div className={classes.block}>
                     <label htmlFor="Radio">Choose your Radio Type:</label>
-                    <select name="" onChange={setProductOption.bind(null, 'radioType')}>
+                    <select key="radioType" onChange={setProductOption.bind(null, 'radioType')}>
                         <option disabled selected value></option>
                         <option value="Basic">Basic</option>
                         <option value="Medium">Medium</option>
@@ -195,7 +192,9 @@ class OrderStep1 extends Component {
         let radio = <div>
             <div className={classes.block}>
                 <label htmlFor="Radio">Radio:</label>
-                <select name="" onChange={(e) => this.RadioHandler(e, setProductOption)}>
+                <select
+                key="hasRadio"
+                    onChange={(e) => this.RadioHandler(e, setProductOption)}>
                     <option disabled selected value></option>
                     <option value="yes">Yes</option>
                     <option value="no">No</option>
@@ -203,7 +202,9 @@ class OrderStep1 extends Component {
             </div>
             {radioOnList}
         </div>;
-        let airConditioning = <select name="" onChange={setProductOption.bind(null, 'hasAirConditioning')}>
+        let airConditioning = <select
+        key="hasAirConditioning"
+            onChange={setProductOption.bind(null, 'hasAirConditioning')}>
             <option disabled selected value></option>
             <option value="yes">Yes</option>
             <option value="no">No</option>
@@ -213,20 +214,16 @@ class OrderStep1 extends Component {
             ? <div></div>
             : <input
                 type="number"
-                name="numberCup"
+                key="numberCup"
                 placeholder="select your number"
                 className={classes.inputmargin}
                 onChange={setProductOption.bind(null, 'numCupholders')}/>
-
-        let errorarea = error
-            ? <Error error={error}/>
-            : <Error error="Enjoy your selecting"/>
 
         let sigLight = this.state.cigOn === "no"
             ? <div></div>
             : <input
                 type="number"
-                name="numberCig"
+                key="numberCig"
                 className={classes.inputmargin}
                 placeholder="select your number"
                 onChange={setProductOption.bind(null, 'numCigaretteLighters')}/>
@@ -236,7 +233,9 @@ class OrderStep1 extends Component {
             : <div className={classes.modalon}>
                 <div className={classes.block}>
                     <label htmlFor="modal">Make your choice:</label>
-                    <select name="" onChange={setProductOption.bind(null, 'hoodOrnament')}>
+                    <select
+                    key="hoodOrnament"
+                        onChange={setProductOption.bind(null, 'hoodOrnament')}>
                         <option disabled selected value></option>
                         <option value="battleship">battleship</option>
                         <option value="boot">boot</option>
@@ -269,14 +268,16 @@ class OrderStep1 extends Component {
                 className={classes.inputmargin}
                 name="monogram"
                 placeholder="Enter the monogram"
-                onChange={setProductOption.bind(null, 'monogram')}/>
+                onBlur={(e) => this.checkChar(e, setProductOption)}/>
 
         let mkContent1 = (this.state.mkContent1) === false
             ? <div className ={classes.modalnone}></div>
             : <div className={classes.modalon}>
                 <div className={classes.block}>
                     <label htmlFor="MK">Type in your choice:</label>
-                    <select name="" onChange={setProductOption.bind(null, 'trunkMonkey')}>
+                    <select
+                    key="trunkMonkey"
+                        onChange={setProductOption.bind(null, 'trunkMonkey')}>
                         <option disabled selected value></option>
                         <option value="capuchin">capuchin</option>
                         <option value="spider">spider</option>
@@ -302,7 +303,9 @@ class OrderStep1 extends Component {
                 radio = <div>
                     <div className={classes.block}>
                         <label htmlFor="Radio">Radio:</label>
-                        <select name="" onChange={(e) => this.RadioHandler(e, setProductOption)}>
+                        <select
+                        key="hasRadio"
+                            onChange={(e) => this.RadioHandler(e, setProductOption)}>
                             <option disabled selected value></option>
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
@@ -334,7 +337,9 @@ class OrderStep1 extends Component {
                 radio = <div>
                     <div className={classes.block}>
                         <label htmlFor="Radio">Radio:</label>
-                        <select name="" onChange={(e) => this.RadioHandler(e, setProductOption)}>
+                        <select
+                        key="hasRadio"
+                            onChange={(e) => this.RadioHandler(e, setProductOption)}>
                             <option disabled selected value></option>
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
@@ -347,7 +352,9 @@ class OrderStep1 extends Component {
                 radio = <div>
                     <div className={classes.block}>
                         <label htmlFor="Radio">Radio:</label>
-                        <select name="" onChange={(e) => this.RadioHandler(e, setProductOption)}>
+                        <select
+                        key="hasRadio"
+                            onChange={(e) => this.RadioHandler(e, setProductOption)}>
                             <option disabled selected value></option>
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
@@ -364,102 +371,118 @@ class OrderStep1 extends Component {
             case 1:
                 choose = <div>
                     <div className={classes.block}>
-                        <label htmlFor="color">Color:</label>
+                        <label htmlFor="color">*Color:</label>
                         {colors}
                     </div>
                     <div className={classes.block}>
-                        <label htmlFor="interiorFabricColor">Interior Fabric Color:</label>
+                        <label htmlFor="interiorFabricColor">*Interior Fabric Color:</label>
                         <input
-                            className={classes.colorTan}
+                            className={fabricColor === 1
+                            ? "colorTanSelected"
+                            : "colorTan"}
                             value="Tan"
-                            onClick={(e) => this.InteriorcolorHandler(e, setProductOption)}/>
+                            onClick={(e) => this.InteriorcolorHandler(1, e, setProductOption)}/>
                         <input
-                            className={classes.colorMaroon}
+                            className={fabricColor === 2
+                            ? "colorMaroonSelected"
+                            : "colorMaroon"}
                             value="Maroon"
-                            onClick={(e) => this.InteriorcolorHandler(e, setProductOption)}/>
-
+                            onClick={(e) => this.InteriorcolorHandler(2, e, setProductOption)}/>
                         <input
-                            className={classes.colorRed}
+                            className={fabricColor === 3
+                            ? "colorRedSelected"
+                            : "colorRed"}
                             value="Red"
-                            onClick={(e) => this.InteriorcolorHandler(e, setProductOption)}/>
-
+                            onClick={(e) => this.InteriorcolorHandler(3, e, setProductOption)}/>
                         <input
-                            className={classes.colorGreen}
+                            className={fabricColor === 4
+                            ? "colorGreenSelected"
+                            : "colorGreen"}
                             value="Green"
-                            onClick={(e) => this.InteriorcolorHandler(e, setProductOption)}/>
-
+                            onClick={(e) => this.InteriorcolorHandler(4, e, setProductOption)}/>
                         <input
-                            className={classes.colorBlack}
+                            className={fabricColor === 5
+                            ? "colorBlackSelected"
+                            : "colorBlack"}
                             value="Black"
-                            onClick={(e) => this.InteriorcolorHandler(e, setProductOption)}/>
-
+                            onClick={(e) => this.InteriorcolorHandler(5, e, setProductOption)}/>
                         <input
-                            className={classes.colorGray}
+                            className={fabricColor === 6
+                            ? "colorGraySelected"
+                            : "colorGray"}
                             value="Gray"
-                            onClick={(e) => this.InteriorcolorHandler(e, setProductOption)}/>
-
+                            onClick={(e) => this.InteriorcolorHandler(6, e, setProductOption)}/>
                     </div>
                     <div className={classes.block}>
-                        <label htmlFor="Dashboard color">Dashboard color:</label>
+                        <label htmlFor="Dashboard color">*Dashboard color:</label>
                         <input
-                            className={classes.colorTan}
+                            className={dashboardColor === 1
+                            ? "colorTanSelected"
+                            : "colorTan"}
                             value="Tan"
-                            onClick={(e) => this.dashBoardcolorHandler(e, setProductOption)}/>
+                            onClick={(e) => this.dashBoardcolorHandler(1, e, setProductOption)}/>
                         <input
-                            className={classes.colorMaroon}
+                            className={dashboardColor === 2
+                            ? "colorMaroonSelected"
+                            : "colorMaroon"}
                             value="Maroon"
-                            onClick={(e) => this.dashBoardcolorHandler(e, setProductOption)}/>
-
+                            onClick={(e) => this.dashBoardcolorHandler(2, e, setProductOption)}/>
                         <input
-                            className={classes.colorRed}
+                            className={dashboardColor === 3
+                            ? "colorRedSelected"
+                            : "colorRed"}
                             value="Red"
-                            onClick={(e) => this.dashBoardcolorHandler(e, setProductOption)}/>
+                            onClick={(e) => this.dashBoardcolorHandler(3, e, setProductOption)}/>
                         <input
-                            className={classes.colorGreen}
+                            className={dashboardColor === 4
+                            ? "colorGreenSelected"
+                            : "colorGreen"}
                             value="Green"
-                            onClick={(e) => this.dashBoardcolorHandler(e, setProductOption)}/>
+                            onClick={(e) => this.dashBoardcolorHandler(4, e, setProductOption)}/>
                         <input
-                            className={classes.colorBlack}
+                            className={dashboardColor === 5
+                            ? "colorBlackSelected"
+                            : "colorBlack"}
                             value="Black"
-                            onClick={(e) => this.dashBoardcolorHandler(e, setProductOption)}/>
-
+                            onClick={(e) => this.dashBoardcolorHandler(5, e, setProductOption)}/>
                         <input
-                            className={classes.colorGray}
+                            className={dashboardColor === 6
+                            ? "colorGraySelected"
+                            : "colorGray"}
                             value="Gray"
-                            onClick={(e) => this.dashBoardcolorHandler(e, setProductOption)}/>
-
+                            onClick={(e) => this.dashBoardcolorHandler(6, e, setProductOption)}/>
                     </div>
                     <div className={classes.block}>
-                        <label htmlFor="seats">Number of seats:</label>
+                        <label htmlFor="seats">*Number of seats:</label>
                         {seats}
                     </div>
                     <div className={classes.block}>
-                        <label htmlFor="exhausts">Number of exhausts:</label>
+                        <label htmlFor="exhausts">*Number of exhausts:</label>
                         <input
                             type="number"
-                            name="exhausts"
+                            key="exhausts"
                             min="1"
                             max="4"
                             onChange={setProductOption.bind(null, 'numExhausts')}/>
                     </div>
                     <div className={classes.block}>
-                        <label htmlFor="Engine">Engine:</label>
-                        <select name="" onChange={setProductOption.bind(null, 'engine')}>
-                            <option disabled selected value></option>
+                        <label htmlFor="Engine">*Engine:</label>
+                        <select key="engine" onChange={setProductOption.bind(null, 'engine')} required>
+                            <option value="" disabled selected></option>
                             <option value="4-cylinder">4-cylinder</option>
                             <option value="6-cylinder">6-cylinder</option>
                             <option value="12-cylinder">12-cylinder</option>
                         </select>
                     </div>
-                    <input className={classes.submit} onClick = {this.purchaseHandler2} type="button" value="Next"/>
+
                 </div>
                 break;
             case 2:
                 choose = <div>
                     <div className={classes.block}>
-                        <label htmlFor="Hubcaps material">Hubcaps material:</label>
+                        <label htmlFor="Hubcaps material">*Hubcaps material:</label>
                         <select
-                            name="hubcapsMaterial"
+                        key="hubcapsMaterial"
                             onChange={setProductOption.bind(null, 'hubcapsMaterial')}>
                             <option disabled selected value></option>
                             <option value="chrome">chrome</option>
@@ -472,8 +495,8 @@ class OrderStep1 extends Component {
                         {Tintedwindows}
                     </div>
                     <div className={classes.block}>
-                        <label htmlFor="Spare tire">Spare tire:</label>
-                        <select name="Spare tire" onChange={setProductOption.bind(null, 'spareTire')}>
+                        <label htmlFor="Spare tire">*Spare tire:</label>
+                        <select key="Spare tire" onChange={setProductOption.bind(null, 'spareTire')}>
                             <option disabled selected value></option>
                             <option value="S">S</option>
                             <option value="M">M</option>
@@ -482,51 +505,43 @@ class OrderStep1 extends Component {
                         </select>
                     </div>
                     <div className={classes.block}>
-                        <label htmlFor="Hood ornament">Hood ornament:</label>
-                        <select name="" onChange={(e) => this.hoodhandler(e, setProductOption)}>
+                        <label htmlFor="Hood ornament">Hood ornament(premium):</label>
+                        <select key="hasHood" onChange={(e) => this.hoodhandler(e, setProductOption)}>
                             <option disabled selected value></option>
                             <option value="yes">Yes</option>
                             <option value="">No</option>
                         </select>
                         {buttonHood}
+                        <div>{selectedOptions.hoodOrnament}</div>
                     </div>
                     <div className={classes.block}>
-                        <label htmlFor="Trunk monkey">Trunk monkey:</label>
-                        <select name="" onChange={(e) => this.monkeyHandler(e, setProductOption)}>
+                        <label htmlFor="Trunk monkey">Trunk monkey(premium):</label>
+                        <select
+                        key="hasMonkey"
+                            onChange={(e) => this.monkeyHandler(e, setProductOption)}>
                             <option disabled selected value></option>
                             <option value="yes">Yes</option>
                             <option value="">No</option>
                         </select>
                         {buttonMonkey}
+                        <div>{selectedOptions.trunkMonkey}</div>
                     </div>
-                    <input className={classes.submit} onClick = {this.purchaseHandler3} type="button" value="Next"/>
-
                 </div>;
                 break;
             case 3:
                 choose = <div>
                     <div className={classes.block}>
-                        <label htmlFor="Dashboard lights color">Dashboard lights color:</label>
+                        <label htmlFor="Dashboard lights color">*Dashboard lights color:</label>
                         <input
-                            className={classes.colorRed}
-                            value="Red"
-                            onClick={(e) => this.dashBoardLightcolorHandler(e, setProductOption)}/>
-                        <input
-                            className={classes.colorGreen}
-                            value="Green"
-                            onClick={(e) => this.dashBoardLightcolorHandler(e, setProductOption)}/>
-                        <input
-                            className={classes.colorBlack}
-                            value="Black"
-                            onClick={(e) => this.dashBoardLightcolorHandler(e, setProductOption)}/>
-                        <input
-                            className={classes.colorGray}
-                            value="Gray"
-                            onClick={(e) => this.dashBoardLightcolorHandler(e, setProductOption)}/>
+                            type="color"
+                            name="favcolor"
+                            onChange={setProductOption.bind(null, 'dashboardColor')}/>
                     </div>
                     <div className={classes.block}>
                         <label htmlFor="Cupholders">Cupholders:</label>
-                        <select name="" onChange={(e) => this.cupHolderOnHandler(e, setProductOption)}>
+                        <select
+                            name="hasCup"
+                            onChange={(e) => this.cupHolderOnHandler(e, setProductOption)}>
                             <option disabled selected value></option>
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
@@ -535,7 +550,7 @@ class OrderStep1 extends Component {
                     </div>
                     <div className={classes.block}>
                         <label htmlFor="Cigarette lighters">Cigarette lighters:</label>
-                        <select name="" onChange={(e) => this.cigOnHandler(e, setProductOption)}>
+                        <select key="hasCig" onChange={(e) => this.cigOnHandler(e, setProductOption)}>
                             <option disabled selected value></option>
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
@@ -544,40 +559,28 @@ class OrderStep1 extends Component {
                     </div>
                     <div className={classes.block}>
                         <label htmlFor="Glove box">Glove box:</label>
-                        <select name="" onChange={setProductOption.bind(null, 'hasGloveBox')}>
+                        <select
+                        key="hasGloveBox"
+                            onChange={setProductOption.bind(null, 'hasGloveBox')}>
                             <option disabled selected value></option>
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
                         </select>
                     </div>
                     <div className={classes.block}>
-                        <label htmlFor="Floormats color">Floormats color:</label>
+                        <label htmlFor="Floormats color">*Floormats color:</label>
                         <input
-                            className={classes.colorRed}
-                            value="Red"
-                            onClick={(e) => this.floorcolorHandler(e, setProductOption)}/>
-                        <input
-                            className={classes.colorGreen}
-                            value="Green"
-                            onClick={(e) => this.floorcolorHandler(e, setProductOption)}/>
-                        <input
-                            className={classes.colorBlack}
-                            value="Black"
-                            onClick={(e) => this.floorcolorHandler(e, setProductOption)}/>
-                        <input
-                            className={classes.colorGray}
-                            value="Gray"
-                            onClick={(e) => this.floorcolorHandler(e, setProductOption)}/>
+                            type="color"
+                            name="favcolor"
+                            onChange={setProductOption.bind(null, 'floormatsColor')}/>
                     </div>
-                    <input className={classes.submit} onClick = {this.purchaseHandler4} type="button" value="Next"/>
-
                 </div>;
                 break;
             case 4:
                 choose = <div>
                     <div className={classes.block}>
                         <label htmlFor="GPS">GPS:</label>
-                        <select name="" onChange={setProductOption.bind(null, 'hasGPS')}>
+                        <select key="hasGPS" onChange={setProductOption.bind(null, 'hasGPS')}>
                             <option disabled selected value></option>
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
@@ -589,11 +592,11 @@ class OrderStep1 extends Component {
                         {airConditioning}
                     </div>
                     <div className={classes.block}>
-                        <label htmlFor="Monogrammed steering wheel cover">Monogrammed steering wheel cover:</label>
-                        <select name="" onChange={(e) => this.mogOnhandler(e, setProductOption)}>
+                        <label htmlFor="Monogrammed steering wheel cover">Steering wheel cover(premium):</label>
+                        <select key="hasMog" onChange={(e) => this.mogOnhandler(e, setProductOption)}>
                             <option disabled selected value></option>
                             <option value="yes">Yes</option>
-                            <option value="">No</option>
+                            <option value="no">No</option>
                         </select>
                         {mogInput}
                     </div>
@@ -629,7 +632,7 @@ class OrderStep1 extends Component {
                                         className={this.state.now === 1
                                         ? classes.route12
                                         : classes.route1}
-                                        onClick={(e) => this.purchaseHandler1(e)}>Basic</div>
+                                        onClick={this.purchaseHandler1}>Basic</div>
                                     <div
                                         className={this.state.now === 2
                                         ? classes.route12
@@ -646,11 +649,9 @@ class OrderStep1 extends Component {
                                         : classes.route1}
                                         onClick={this.purchaseHandler4}>Accessories</div>
                                 </div>
-                                {errorarea}
-                                <div className={classes.choosen}>
+                                <div className={classes.choosen} id="choosen">
                                     {choose}
                                 </div>
-
                             </div>
                             {modalContent1}
                             {mkContent1}
