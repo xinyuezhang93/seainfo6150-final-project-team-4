@@ -61,7 +61,7 @@ class OrderStep2 extends Component {
                 setUserInfo('Phone Number', e);
                 this.setState({phoneisValid: true})
             } else {
-                alert("Wrong type of number");
+                alert("Wrong type of phone number");
             }
         }
     }
@@ -102,7 +102,7 @@ class OrderStep2 extends Component {
                 setUserInfo('Phone Number', e);
                 this.setState({cellisValid: true})
             } else {
-                alert("Wrong type of number");
+                alert("Wrong type of cell number");
             }
         }
     }
@@ -143,7 +143,7 @@ class OrderStep2 extends Component {
                             type="text"
                             name="buyerSAddress"
                             placeholder="Billing 5 digit zip code"
-                            onChange={(e) => this.checkBillingZip(e,setUserInfo)}/></div>
+                            onChange={(e) => this.checkBillingZip(e, setUserInfo)}/></div>
                 </div>
             : <div></div>;
 
