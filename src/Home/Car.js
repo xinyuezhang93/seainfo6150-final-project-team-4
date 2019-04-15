@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Car = ({name,imgSrc}) => (
   <div>
-      <Link to={`/products/${name}`}>
+      <Link to={`/products/${name}`} className={classes.CarLink} >
           {name}
       </Link>
     <br/>
