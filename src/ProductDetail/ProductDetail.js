@@ -9,8 +9,19 @@ class ProductDetail extends PureComponent {
 
 	render() {
 		const { categories, product, selectProductId } = this.props;
-
 		const category = categories[product.categoryId];
+		let availability;
+		let saleCheck;
+		if (product.available) {
+			availability = 'Yes';
+		} else {
+			availability = 'No';
+		}
+		if (product.sale === undefined) {
+			saleCheck = 'No';
+		} else {
+			saleCheck = 'Yes';
+		}
 		return (
 			<div className="product-detail-section">
 				<div>
@@ -21,8 +32,8 @@ class ProductDetail extends PureComponent {
 					<div>
 						{' '}
 						<div className="product-important-details">
-							<div>Product Id </div>
-							<div className="product-detail-field">{product.id} </div>
+							<div>Product Availability </div>
+							<div className="product-detail-field">{availability} </div>
 						</div>
 					</div>
 					<div>
@@ -33,8 +44,13 @@ class ProductDetail extends PureComponent {
 					</div>
 					<div>
 						<div className="product-important-details">
-							<div> Sale Price </div>
-							<div className="product-detail-field"> ${product.sale} </div>
+							{saleCheck === 'Yes' ? (
+								<div>
+									{' '}
+									<span> Sale Price </span>{' '}
+									<span className="product-detail-field">${product.sale} </span>{' '}
+								</div>
+							) : null}
 						</div>
 					</div>
 					<div className="product-description">{product.description}</div>

@@ -9,8 +9,13 @@ const Categories = ({ categories }) => (
 		{categories.map(category => {
 			return (
 				<li key={category.id}>
-					<Link className="category-option" to={`/products/${category.id}`}>
-						{category.name}
+					<Link to={`/products/${category.id}`}>
+						<div className="category-image-container">
+							<img className="category-option" src={category.img.sm} />
+							<div className="categoryName-overlay">
+								<div className="categoryName-text">{category.name}</div>
+							</div>
+						</div>
 					</Link>
 				</li>
 			);

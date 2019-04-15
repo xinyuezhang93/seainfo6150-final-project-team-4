@@ -1,6 +1,17 @@
 .products-by-category {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	margin-top: 5%;
-	margin-left: 10%;
+}
+@media screen and (max-width: 450px) {
+	.products-by-category {
+		display: grid;
+		grid-template-columns: 1fr;
+	}
+}
+
+@media screen and (max-width: 900px) and (min-width: 450px) {
+	.products-by-category {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
 }
