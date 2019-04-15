@@ -1,6 +1,7 @@
 .products-by-category {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	margin-top: 5%;
+	margin-top: 10%;
+	margin-bottom: 10%;
 	margin-left: 10%;
 }

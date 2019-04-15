@@ -2,7 +2,6 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 import styles from './App.module.css';
-
 import {selectProductId, setProductOption, setUserInfo, viewProduct} from './actions/actions';
 
 // components
@@ -20,11 +19,17 @@ import OrderStep2 from './Order/OrderStep2';
 import Summary from './Order/Summary';
 import ThankYou from './Order/ThankYou';
 import NotFound from './NotFound/NotFound';
+import Header from './public/Header';
+import Footer from './public/Footer';
 
 let App = props => (
     <Router>
         <div className={styles.container}>
-
+            <Header 
+                categories={props.categories}
+                viewedProducts={props.viewedProducts}
+                allProducts={props.products}
+                />
             {/* end 5 most recently viewed products */}
             <main>
                 <Switch>
@@ -38,25 +43,12 @@ let App = props => (
                             .sort((a, b) => b.year - a.year);
                         return (
                             <div>
-                                {/* start example of link to route */}
-                                <Link to="/">Home</Link>
-                                {/* end example of link to route */}
                                 {/* start list of product category links */}
-                                <Categories categories={Object.values(props.categories)}/> {/* end list of product category links */}
-                                {/* start 5 most recently viewed products */}
-                                {props.viewedProducts.length > 0
-                                    ? (
-                                        <div>
-                                            Already Viewed Products
-                                        </div>
-                                    )
-                                    : null}
-                                <ViewedProducts
-                                    categories={props.categories}
-                                    products={props
-                                    .viewedProducts
-                                    .map(productId => props.products[productId])}/>
+                                <Categories categories={Object.values(props.categories)}/> 
+                                {/* end list of product category links */}
                                 <AllProducts categories={props.categories} products={sortedProducts}/>
+                                <Footer/>
+
                             </div>
                         );
                     }}/>
@@ -74,26 +66,17 @@ let App = props => (
                             .sort((a, b) => b.year - a.year);
                         return (
                             <div>
-                                <Link to="/">Home</Link>
-                                {/* end example of link to route */}
+                              
                                 {/* start list of product category links */}
                                 <Categories categories={Object.values(props.categories)}/> {/* end list of product category links */}
-                                {/* start 5 most recently viewed products */}
-                                {props.viewedProducts.length > 0
-                                    ? (
-                                        <div>
-                                            Already Viewed Products
-                                        </div>
-                                    )
-                                    : null}
-                                <ViewedProducts
-                                    categories={props.categories}
-                                    products={props
-                                    .viewedProducts
-                                    .map(productId => props.products[productId])}/><CategoryProducts
+                                <CategoryProducts
                                     categories={props.categories}
                                     category={category}
-                                    products={sortedProducts}/></div>
+                                    products={sortedProducts}/>
+                                <Footer/>
+
+                                </div>
+
                         );
                     }}/>
                     <Route
@@ -102,24 +85,12 @@ let App = props => (
                         const id = routerProps.match.params.id;
                         const product = props.products[id];
                         return (
-                            <div>{/* start example of link to route */}
-                                <Link to="/">Home</Link>
-                                {/* end example of link to route */}
+                            <div>
                                 {/* start list of product category links */}
                                 <Categories categories={Object.values(props.categories)}/> {/* end list of product category links */}
-                                {/* start 5 most recently viewed products */}
-                                {props.viewedProducts.length > 0
-                                    ? (
-                                        <div>
-                                            Already Viewed Products
-                                        </div>
-                                    )
-                                    : null}
-                                <ViewedProducts
-                                    categories={props.categories}
-                                    products={props
-                                    .viewedProducts
-                                    .map(productId => props.products[productId])}/><ProductDetail {...props} product={product}/></div>
+                                <ProductDetail {...props} product={product}/>
+                                <Footer/>
+                            </div>
                         );
                     }}/>
                     <Route exact path="/order/1" render={() => <OrderStep1 {...props}/>}/>
@@ -131,21 +102,24 @@ let App = props => (
                     <Route render={() => <NotFound {...props}/>}/>
                 </Switch>
             </main>
+
         </div>
     </Router>
 );
 
-App = connect(state => state, dispatch => {
-    return {
-        selectProductId: (productId, e) => dispatch(selectProductId({id: productId})),
+App = connect(
+    (state) => state,
+    (dispatch) => {
+      return {
+        selectProductId: (productId, e) => dispatch(selectProductId({ id: productId })),
         setProductOption: (optionId, e) => {
-            dispatch(setProductOption({id: optionId, e}));
+          dispatch(setProductOption({ id: optionId, e }))
         },
         setUserInfo: (infoId, e) => {
-            dispatch(setUserInfo({id: infoId, e}));
+          dispatch(setUserInfo({ id: infoId, e }))
         },
-        viewProduct: productId => dispatch(viewProduct({id: productId}))
-    };
-})(App);
-
+        viewProduct: (productId) => dispatch(viewProduct({ id: productId }))
+      }
+    }
+  )(App)    
 export default App;

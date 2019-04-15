@@ -1,28 +1,113 @@
-.head {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 50px;
-    background-color: #156a99;
-    font-size: 1.5em;
-    color: silver;
-    text-align: left;
+.navbar {
+    background-image: url('http://hdwarena.com/wp-content/uploads/2019/01/Beautiful-Car-Background.jpg');  
+    background-size: 100% 400%;
+    height: 5rem;
+    min-width: 30rem;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-}
+    justify-content: flex-end;
 
-.submit {
-    width: 140px;
-    height: 40px;
+}
+.logo {
+    text-decoration: none;
+    color:rgb(58,107,176);
+    margin-right:auto;
+    font-size: 2.5em;
+    padding-left:20px;
+    font-weight:bold;
+
+}
+.products {
+    font-size:1.8em;
+    color: rgb(58,107,176);
+    padding-left: 10px;
+    padding-right:10px;
+    border: 2px solid orange;
     background-color: orange;
-    color: white;
-    border-radius: 20em;
-    font-size: 0.8em;
+    border-radius: 20px/40px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
 }
 
-.submit:hover {
-    background-color: #ffc06c;
+.products:hover {
+    background-color: orange;
+    color:white;
 }
+
+.button {
+    font-size:1.8em;
+    color: rgb(58,107,176);
+    padding-left: 10px;
+    padding-right:10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 2px solid orange;
+    background-color: orange;
+    border-radius: 20px/40px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+  }
+  .button:hover {
+    background: orange;
+    color:white;
+
+  }
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .overlay:target {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 80%;
+    position: relative;
+    transition: all 5s ease-in-out;
+  }
+  
+  .popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+  }
+  .popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  .popup .close:hover {
+    color: orange;
+  }
+  .popup .content {
+    max-height: 30%;
+    overflow: auto;
+  }
+  
+  @media screen and (max-width: 700px){
+    .box{
+      width: 100%;
+    }
+    .popup{
+      width: 100%;
+    }
+  }

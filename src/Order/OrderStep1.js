@@ -611,7 +611,6 @@ class OrderStep1 extends Component {
             ? (<Redirect to="/order/2"/>)
             : (
                 <div>
-                    <Header/>
                     <form
                         onSubmit={this
                         .handleSubmit

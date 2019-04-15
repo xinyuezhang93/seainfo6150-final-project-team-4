@@ -1,4 +1,17 @@
 .carPic{
-  width:200px;
-  height:150px;
+  width:auto;
+  height:auto;
+}
+.CarLink{
+  color: #1750A2;
+  text-transform: capitalize;
+  font-size: 30px;
+  background: orange;
+  text-decoration: none;
+  border-radius: 20px;
+  border: 2px white solid;
+
+}
+.CarLink:hover{
+  color:white;
 }

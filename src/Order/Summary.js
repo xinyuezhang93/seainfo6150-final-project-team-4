@@ -30,7 +30,6 @@ class Summary extends Component {
             ? (<Redirect to="/order/thank-you"/>)
             : (
                 <div>
-                    <Header/>
                     <form
                         onSubmit={this
                         .handleSubmit
