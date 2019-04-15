@@ -72,6 +72,7 @@ body {
     color: white;
     border-radius: 20em;
     font-size: 1.5em;
+    cursor: pointer;
 }
 .submit:hover {
     background-color: #ffc06c;
