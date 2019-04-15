@@ -14,6 +14,7 @@
 
 @media (min-width: 200px) {
     .wrapping {
+        width: 80%;
         margin: 0 auto;
         display: grid;
         grid-template-columns: 100%;
@@ -21,6 +22,7 @@
 }
 @media (min-width: 600px) {
     .wrapping {
+        width: 80%;
         margin: 0 auto;
         display: grid;
         grid-template-columns: 50% 50%;
@@ -28,6 +30,7 @@
 }
 @media (min-width: 1000px) {
     .wrapping {
+        width: 80%;
         margin: 0 auto;
         display: grid;
         grid-template-columns: 33% 33% 33%;
@@ -35,9 +38,10 @@
 }
 @media (min-width: 1500px) {
     .wrapping {
+        width: 80%;
         margin: 0 auto;
         display:grid;
-        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-columns: 33% 33% 33%;
     }
 }
 
