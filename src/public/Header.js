@@ -16,13 +16,16 @@ class Header extends Component {
       return (
         <div className = {styles.two}>
             <div className={styles.navbar}>
+              
                 <Link to={`/`} className = {styles.logo}>
                       True Car
                 </Link>
+              <div className = {styles.boxes}>
                 <Link to={`/products`} className = {styles.products}>
                   Products
-                </Link>
-                <a className = {styles.button} href="#popup1">Recently Viewed</a>
+                </Link></div>
+                <div className = {styles.boxes}>
+                <a className = {styles.button} href="#popup1">Recently Viewed</a></div>
             </div>
 
             <div id = 'popup1' className = {styles.overlay}>
