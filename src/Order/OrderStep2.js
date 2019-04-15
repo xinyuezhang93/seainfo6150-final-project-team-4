@@ -143,7 +143,7 @@ class OrderStep2 extends Component {
                             type="text"
                             name="buyerSAddress"
                             placeholder="Billing 5 digit zip code"
-                            onChange={(e) => this.checkBillingZip(e,setUserInfo)}/></div>
+                            onChange={(e) => this.checkBillingZip(e, setUserInfo)}/></div>
                 </div>
             : <div></div>;
 

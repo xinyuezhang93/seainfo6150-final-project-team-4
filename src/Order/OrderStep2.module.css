@@ -66,19 +66,17 @@ img {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-  
-  
     padding: 10px;
     padding-bottom: 50px;
     box-sizing: border-box;
 }
 
 .imgLeft{
-    width: 45%;
+    width: 48%;
 }
 
 .imgLeft img{
-    margin-top:0px;
-    width: 600px;
-    height: 400px;
+    margin-top: 0;
+    width: 80%;
+    height: 46.39%;
 }
