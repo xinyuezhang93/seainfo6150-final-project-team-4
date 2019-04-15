@@ -61,7 +61,7 @@ class OrderStep2 extends Component {
                 setUserInfo('Phone Number', e);
                 this.setState({phoneisValid: true})
             } else {
-                alert("Wrong type of number");
+                alert("Wrong type of phone number");
             }
         }
     }
@@ -102,7 +102,7 @@ class OrderStep2 extends Component {
                 setUserInfo('Phone Number', e);
                 this.setState({cellisValid: true})
             } else {
-                alert("Wrong type of number");
+                alert("Wrong type of cell number");
             }
         }
     }
