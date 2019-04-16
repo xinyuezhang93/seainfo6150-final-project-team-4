@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {Redirect} from "react-router-dom";
 import classes from './Summary.module.css';
-import Header from './../public/Header';
 import TotalPrice from "./TotalPrice";
 import CarOptions from './CarOptions';
 import UserOptions from './UserOptions';
