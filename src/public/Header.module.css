@@ -1,12 +1,50 @@
-.navbar {
+/* .navbar {
     background-image: url('http://hdwarena.com/wp-content/uploads/2019/01/Beautiful-Car-Background.jpg');  
     background-size: 100% 400%;
     height: 6rem;
-    /* min-width: 30rem; */
+ 
     display: flex;
     justify-content: flex-end;
 
+} */
+
+@media (min-width: 0px) {
+  .navbar {
+    background-image: url('http://hdwarena.com/wp-content/uploads/2019/01/Beautiful-Car-Background.jpg');  
+    background-size: 100% 400%;
+    height: 15rem;
+  }
+  .boxes {
+    border: 2px solid orange;
+    background-color: orange;
+    border-radius: 30px/20px;
+    height: 4rem;
+    margin-top: 5px;
+    margin-bottom: auto;
+    margin-right:10px;
+
+  }
 }
+@media (min-width: 420px) {
+  .navbar {
+    background-image: url('http://hdwarena.com/wp-content/uploads/2019/01/Beautiful-Car-Background.jpg');  
+    background-size: 100% 400%;
+    height: 8rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .boxes {
+    border: 2px solid orange;
+    background-color: orange;
+    border-radius: 30px/20px;
+    height: 4rem;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right:10px;
+  }
+}
+
+
 .logo {
     text-decoration: none;
     color:rgb(58,107,176);
@@ -18,15 +56,7 @@
     margin-bottom: auto;
 
 }
-.boxes {
-  border: 2px solid orange;
-  background-color: orange;
-  border-radius: 30px/20px;
-  height: 4rem;
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-right:10px;
-}
+
 
 .products {
     font-size:1.8em;

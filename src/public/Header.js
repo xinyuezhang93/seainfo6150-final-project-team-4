@@ -22,7 +22,7 @@ class Header extends Component {
                 </Link>
               <div className = {styles.boxes}>
                 <Link to={`/products`} className = {styles.products}>
-                  Products
+                Products
                 </Link></div>
                 <div className = {styles.boxes}>
                 <a className = {styles.button} href="#popup1">Recently Viewed</a></div>
