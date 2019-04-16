@@ -26,14 +26,22 @@ class ProductDetail extends PureComponent {
 			<div className="product-detail-section">
 				<div>
 					<div className="product-important-details">{product.title}</div>
-					<img className="product-detailed-image" src={category.img.lg} />
+					<img
+						className="product-detailed-image"
+						src={category.img.lg}
+						alt="product"
+					/>
 				</div>
 				<div className="product-pricing-details">
 					<div>
 						{' '}
 						<div className="product-important-details">
 							<div>Product Availability </div>
-							<div className="product-detail-field">{availability} </div>
+							{availability === 'Yes' ? (
+								<div className="product-detail-field">{availability} </div>
+							) : (
+								<div className="product-availability">{availability} </div>
+							)}
 						</div>
 					</div>
 					<div>
@@ -47,8 +55,10 @@ class ProductDetail extends PureComponent {
 							{saleCheck === 'Yes' ? (
 								<div>
 									{' '}
-									<span> Sale Price </span>{' '}
-									<span className="product-detail-field">${product.sale} </span>{' '}
+									<span className="product-OnSale">
+										{' '}
+										Sale Price ${product.sale}{' '}
+									</span>
 								</div>
 							) : null}
 						</div>

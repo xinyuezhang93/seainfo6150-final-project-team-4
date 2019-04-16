@@ -11,7 +11,7 @@ const Products = ({ categories, products }) => {
 				<Link
 					className="product-image-container"
 					to={`/products/${product.categoryId}/${product.id}`}>
-					<img className="product-image" src={category.img.sm} />
+					<img className="product-image" src={category.img.sm} alt="" />
 				</Link>
 				<div className="product-title">{product.title}</div>
 			</div>

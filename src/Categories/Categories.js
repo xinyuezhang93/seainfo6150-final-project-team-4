@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './categories.css';
-import classes from './categories.css';
 
 const Categories = ({ categories }) => (
 	<ul className="category-list">
@@ -11,7 +10,11 @@ const Categories = ({ categories }) => (
 				<li key={category.id}>
 					<Link to={`/products/${category.id}`}>
 						<div className="category-image-container">
-							<img className="category-option" src={category.img.sm} />
+							<img
+								className="category-option"
+								src={category.img.sm}
+								alt="category"
+							/>
 							<div className="categoryName-overlay">
 								<div className="categoryName-text">{category.name}</div>
 							</div>
