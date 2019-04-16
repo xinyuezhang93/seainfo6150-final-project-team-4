@@ -129,7 +129,11 @@ const setInfo = ({id, value}) => ({
 });
 
 const normalizeBoolean = (value) => {
-    return value === 'on' || value === 'yes' || value;
+    if(value === 'on' || value === 'yes'){
+        return "yes";
+    }else{
+        return value;
+    };
 }
 
 const setColor = (color) => (dispatch, getState) => {
@@ -309,7 +313,7 @@ const setSpareTire = (spareTire) => (dispatch, getState) => {
 
 const setHasHoodOrnament = (hasHoodOrnament) => (dispatch, getState) => {
     const value = normalizeBoolean(hasHoodOrnament);
-    if (value) {
+    if (value == "yes") {
         const {options} = getState();
         dispatch(setOption({id: 'hasHoodOrnament', value}));
     } else {
@@ -348,7 +352,7 @@ const setHasAirConditioning = (hasAirConditioning) => (dispatch, getState) => {
 
 const setHasTrunkMonkey = (hasTrunkMonkey) => (dispatch, getState) => {
     const value = normalizeBoolean(hasTrunkMonkey);
-    if (value) {
+    if (value == "yes")  {
         const {options} = getState();
         dispatch(setOption({id: 'hasTrunkMonkey', value}));
     } else {
@@ -367,7 +371,7 @@ const setFloormatsColor = (floormatsColor) => (dispatch, getState) => {
 
 const setHasMonogrammedSteeringWheelCover = (hasMonogrammedSteeringWheelCover) => (dispatch, getState) => {
     const value = normalizeBoolean(hasMonogrammedSteeringWheelCover);
-    if (value) {
+    if (value == "yes") {
         dispatch(setOption({id: 'hasMonogrammedSteeringWheelCover', value}));
     } else {
         dispatch(removeOption('hasMonogrammedSteeringWheelCover'));

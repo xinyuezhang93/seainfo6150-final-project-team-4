@@ -134,23 +134,37 @@ class OrderStep1 extends Component {
             name="seats"
             min="1"
             max="10"
+            defaultValue={selectedOptions.numSeats
+            ? selectedOptions.numSeats
+            : ""}
             onChange={setProductOption.bind(null, 'numSeats')}/>;;
         let Tintedwindows = <select
-             key="hasTintedWindows"
+            key="hasTintedWindows"
+            defaultValue={selectedOptions.hasTintedWindows
+            ? selectedOptions.hasTintedWindows
+            : ""}
             onChange={setProductOption.bind(null, 'hasTintedWindows')}>
-            <option disabled selected value></option>
+            <option value=""></option>
             <option value="Yes">Yes</option>
             <option value="No">No</option>
         </select>;
         let colors = <input
             type="color"
             name="favcolor"
+            defaultValue={selectedOptions.color
+            ? selectedOptions.color
+            : ""}
             onChange={setProductOption.bind(null, 'color')}/>;
         let radioOnList = this.state.radioOn === "yes"
             ? <div className={classes.block}>
                     <label htmlFor="Radio">Choose your Radio Type:</label>
-                    <select name="radioType" onChange={setProductOption.bind(null, 'radioType')}>
-                        <option disabled selected value></option>
+                    <select
+                        name="radioType"
+                        defaultValue={selectedOptions.radioType
+                        ? selectedOptions.radioType
+                        : ""}
+                        onChange={setProductOption.bind(null, 'radioType')}>
+                        <option value=""></option>
                         <option value="Medium">Medium</option>
                     </select>
                 </div>
@@ -158,8 +172,13 @@ class OrderStep1 extends Component {
         let radioOnList1 = this.state.radioOn === "yes"
             ? <div className={classes.block}>
                     <label htmlFor="Radio">Choose your Radio Type:</label>
-                    <select key="radioType" onChange={setProductOption.bind(null, 'radioType')}>
-                        <option disabled selected value></option>
+                    <select
+                        key="radioType"
+                        defaultValue={selectedOptions.radioType
+                        ? selectedOptions.radioType
+                        : ""}
+                        onChange={setProductOption.bind(null, 'radioType')}>
+                        <option value=""></option>
                         <option value="Medium">Medium</option>
                         <option value="Fancy">Fancy</option>
                     </select>
@@ -168,8 +187,13 @@ class OrderStep1 extends Component {
         let radioOnList2 = this.state.radioOn === "yes"
             ? <div className={classes.block}>
                     <label htmlFor="Radio">Choose your Radio Type:</label>
-                    <select key="radioType" onChange={setProductOption.bind(null, 'radioType')}>
-                        <option disabled selected value></option>
+                    <select
+                        key="radioType"
+                        defaultValue={selectedOptions.radioType
+                        ? selectedOptions.radioType
+                        : ""}
+                        onChange={setProductOption.bind(null, 'radioType')}>
+                        <option value=""></option>
                         <option value="Basic">Basic</option>
                         <option value="Medium">Medium</option>
                     </select>
@@ -193,9 +217,12 @@ class OrderStep1 extends Component {
             <div className={classes.block}>
                 <label htmlFor="Radio">Radio:</label>
                 <select
-                key="hasRadio"
+                    key="hasRadio"
+                    defaultValue={selectedOptions.hasRadio
+                    ? selectedOptions.hasRadio
+                    : ""}
                     onChange={(e) => this.RadioHandler(e, setProductOption)}>
-                    <option disabled selected value></option>
+                    <option value=""></option>
                     <option value="yes">Yes</option>
                     <option value="no">No</option>
                 </select>
@@ -203,9 +230,12 @@ class OrderStep1 extends Component {
             {radioOnList}
         </div>;
         let airConditioning = <select
-        key="hasAirConditioning"
+            key="hasAirConditioning"
+            defaultValue={selectedOptions.hasAirConditioning
+            ? selectedOptions.hasAirConditioning
+            : ""}
             onChange={setProductOption.bind(null, 'hasAirConditioning')}>
-            <option disabled selected value></option>
+            <option value=""></option>
             <option value="yes">Yes</option>
             <option value="no">No</option>
         </select>
@@ -217,6 +247,9 @@ class OrderStep1 extends Component {
                 key="numberCup"
                 placeholder="select your number"
                 className={classes.inputmargin}
+                defaultValue={selectedOptions.numCupholders
+                ? selectedOptions.numCupholders
+                : ""}
                 onChange={setProductOption.bind(null, 'numCupholders')}/>
 
         let sigLight = this.state.cigOn === "no"
@@ -226,6 +259,9 @@ class OrderStep1 extends Component {
                 key="numberCig"
                 className={classes.inputmargin}
                 placeholder="select your number"
+                defaultValue={selectedOptions.numCigaretteLighters
+                ? selectedOptions.numCigaretteLighters
+                : ""}
                 onChange={setProductOption.bind(null, 'numCigaretteLighters')}/>
 
         let modalContent1 = (this.state.modalContent1) === false
@@ -234,9 +270,12 @@ class OrderStep1 extends Component {
                 <div className={classes.block}>
                     <label htmlFor="modal">Make your choice:</label>
                     <select
-                    key="hoodOrnament"
+                        key="hoodOrnament"
+                        defaultValue={selectedOptions.hoodOrnament !== undefined
+                        ? selectedOptions.hoodOrnament
+                        : ""}
                         onChange={setProductOption.bind(null, 'hoodOrnament')}>
-                        <option disabled selected value></option>
+                        <option value=""></option>
                         <option value="battleship">battleship</option>
                         <option value="boot">boot</option>
                         <option value="cannon">cannon</option>
@@ -268,6 +307,9 @@ class OrderStep1 extends Component {
                 className={classes.inputmargin}
                 name="monogram"
                 placeholder="Enter the monogram"
+                defaultValue={selectedOptions.monogram
+                ? selectedOptions.monogram
+                : ""}
                 onBlur={(e) => this.checkChar(e, setProductOption)}/>
 
         let mkContent1 = (this.state.mkContent1) === false
@@ -276,9 +318,9 @@ class OrderStep1 extends Component {
                 <div className={classes.block}>
                     <label htmlFor="MK">Type in your choice:</label>
                     <select
-                    key="trunkMonkey"
+                        key="trunkMonkey"
                         onChange={setProductOption.bind(null, 'trunkMonkey')}>
-                        <option disabled selected value></option>
+                        <option value=""></option>
                         <option value="capuchin">capuchin</option>
                         <option value="spider">spider</option>
                         <option value="rhesus">rhesus</option>
@@ -304,9 +346,12 @@ class OrderStep1 extends Component {
                     <div className={classes.block}>
                         <label htmlFor="Radio">Radio:</label>
                         <select
-                        key="hasRadio"
+                            key="hasRadio"
+                            defaultValue={selectedOptions.hasRadio
+                            ? selectedOptions.hasRadio
+                            : ""}
                             onChange={(e) => this.RadioHandler(e, setProductOption)}>
-                            <option disabled selected value></option>
+                            <option value=""></option>
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
                         </select>
@@ -338,9 +383,12 @@ class OrderStep1 extends Component {
                     <div className={classes.block}>
                         <label htmlFor="Radio">Radio:</label>
                         <select
-                        key="hasRadio"
+                            key="hasRadio"
+                            defaultValue={selectedOptions.hasRadio
+                            ? selectedOptions.hasRadio
+                            : ""}
                             onChange={(e) => this.RadioHandler(e, setProductOption)}>
-                            <option disabled selected value></option>
+                            <option value=""></option>
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
                         </select>
@@ -353,9 +401,12 @@ class OrderStep1 extends Component {
                     <div className={classes.block}>
                         <label htmlFor="Radio">Radio:</label>
                         <select
-                        key="hasRadio"
+                            key="hasRadio"
+                            defaultValue={selectedOptions.hasRadio
+                            ? selectedOptions.hasRadio
+                            : ""}
                             onChange={(e) => this.RadioHandler(e, setProductOption)}>
-                            <option disabled selected value></option>
+                            <option value=""></option>
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
                         </select>
@@ -463,11 +514,20 @@ class OrderStep1 extends Component {
                             key="exhausts"
                             min="1"
                             max="4"
+                            defaultValue={selectedOptions.numExhausts
+                            ? selectedOptions.numExhausts
+                            : ""}
                             onChange={setProductOption.bind(null, 'numExhausts')}/>
                     </div>
                     <div className={classes.block}>
                         <label htmlFor="Engine">*Engine:</label>
-                        <select key="engine" onChange={setProductOption.bind(null, 'engine')} required>
+                        <select
+                            key="engine"
+                            defaultValue={selectedOptions.engine
+                            ? selectedOptions.engine
+                            : ""}
+                            onChange={setProductOption.bind(null, 'engine')}
+                            required>
                             <option value="" disabled selected></option>
                             <option value="4-cylinder">4-cylinder</option>
                             <option value="6-cylinder">6-cylinder</option>
@@ -482,9 +542,12 @@ class OrderStep1 extends Component {
                     <div className={classes.block}>
                         <label htmlFor="Hubcaps material">*Hubcaps material:</label>
                         <select
-                        key="hubcapsMaterial"
+                            key="hubcapsMaterial"
+                            defaultValue={selectedOptions.hubcapsMaterial
+                            ? selectedOptions.hubcapsMaterial
+                            : ""}
                             onChange={setProductOption.bind(null, 'hubcapsMaterial')}>
-                            <option disabled selected value></option>
+                            <option value=""></option>
                             <option value="chrome">chrome</option>
                             <option value="steel">steel</option>
                             <option value="plastic">plastic</option>
@@ -496,8 +559,13 @@ class OrderStep1 extends Component {
                     </div>
                     <div className={classes.block}>
                         <label htmlFor="Spare tire">*Spare tire:</label>
-                        <select key="Spare tire" onChange={setProductOption.bind(null, 'spareTire')}>
-                            <option disabled selected value></option>
+                        <select
+                            key="Spare tire"
+                            defaultValue={selectedOptions.spareTire
+                            ? selectedOptions.spareTire
+                            : ""}
+                            onChange={setProductOption.bind(null, 'spareTire')}>
+                            <option value=""></option>
                             <option value="S">S</option>
                             <option value="M">M</option>
                             <option value="L">L</option>
@@ -506,8 +574,13 @@ class OrderStep1 extends Component {
                     </div>
                     <div className={classes.block}>
                         <label htmlFor="Hood ornament">Hood ornament(premium):</label>
-                        <select key="hasHood" onChange={(e) => this.hoodhandler(e, setProductOption)}>
-                            <option disabled selected value></option>
+                        <select
+                            key="hasHood"
+                            defaultValue={selectedOptions.hasHoodOrnament !== undefined
+                            ? selectedOptions.hasHoodOrnament
+                            : ""}
+                            onChange={(e) => this.hoodhandler(e, setProductOption)}>
+                            <option value=""></option>
                             <option value="yes">Yes</option>
                             <option value="">No</option>
                         </select>
@@ -517,9 +590,12 @@ class OrderStep1 extends Component {
                     <div className={classes.block}>
                         <label htmlFor="Trunk monkey">Trunk monkey(premium):</label>
                         <select
-                        key="hasMonkey"
+                            key="hasMonkey"
+                            defaultValue={selectedOptions.hasTrunkMonkey !== undefined
+                            ? selectedOptions.hasTrunkMonkey
+                            : ""}
                             onChange={(e) => this.monkeyHandler(e, setProductOption)}>
-                            <option disabled selected value></option>
+                            <option value=""></option>
                             <option value="yes">Yes</option>
                             <option value="">No</option>
                         </select>
@@ -535,14 +611,20 @@ class OrderStep1 extends Component {
                         <input
                             type="color"
                             name="favcolor"
+                            defaultValue={selectedOptions.dashboardColor
+                            ? selectedOptions.dashboardColor
+                            : ""}
                             onChange={setProductOption.bind(null, 'dashboardColor')}/>
                     </div>
                     <div className={classes.block}>
                         <label htmlFor="Cupholders">Cupholders:</label>
                         <select
                             name="hasCup"
+                            defaultValue={selectedOptions.hasCupholders
+                            ? selectedOptions.hasCupholders
+                            : ""}
                             onChange={(e) => this.cupHolderOnHandler(e, setProductOption)}>
-                            <option disabled selected value></option>
+                            <option value=""></option>
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
                         </select>
@@ -550,8 +632,13 @@ class OrderStep1 extends Component {
                     </div>
                     <div className={classes.block}>
                         <label htmlFor="Cigarette lighters">Cigarette lighters:</label>
-                        <select key="hasCig" onChange={(e) => this.cigOnHandler(e, setProductOption)}>
-                            <option disabled selected value></option>
+                        <select
+                            key="hasCig"
+                            defaultValue={selectedOptions.hasCigaretteLighters
+                            ? selectedOptions.hasCigaretteLighters
+                            : ""}
+                            onChange={(e) => this.cigOnHandler(e, setProductOption)}>
+                            <option value=""></option>
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
                         </select>
@@ -560,9 +647,12 @@ class OrderStep1 extends Component {
                     <div className={classes.block}>
                         <label htmlFor="Glove box">Glove box:</label>
                         <select
-                        key="hasGloveBox"
+                            key="hasGloveBox"
+                            defaultValue={selectedOptions.hasGloveBox
+                            ? selectedOptions.hasGloveBox
+                            : ""}
                             onChange={setProductOption.bind(null, 'hasGloveBox')}>
-                            <option disabled selected value></option>
+                            <option value=""></option>
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
                         </select>
@@ -572,6 +662,9 @@ class OrderStep1 extends Component {
                         <input
                             type="color"
                             name="favcolor"
+                            defaultValue={selectedOptions.floormatsColor
+                            ? selectedOptions.floormatsColor
+                            : ""}
                             onChange={setProductOption.bind(null, 'floormatsColor')}/>
                     </div>
                 </div>;
@@ -580,8 +673,13 @@ class OrderStep1 extends Component {
                 choose = <div>
                     <div className={classes.block}>
                         <label htmlFor="GPS">GPS:</label>
-                        <select key="hasGPS" onChange={setProductOption.bind(null, 'hasGPS')}>
-                            <option disabled selected value></option>
+                        <select
+                            key="hasGPS"
+                            defaultValue={selectedOptions.hasGPS
+                            ? selectedOptions.hasGPS
+                            : ""}
+                            onChange={setProductOption.bind(null, 'hasGPS')}>
+                            <option value=""></option>
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
                         </select>
@@ -593,8 +691,13 @@ class OrderStep1 extends Component {
                     </div>
                     <div className={classes.block}>
                         <label htmlFor="Monogrammed steering wheel cover">Steering wheel cover(premium):</label>
-                        <select key="hasMog" onChange={(e) => this.mogOnhandler(e, setProductOption)}>
-                            <option disabled selected value></option>
+                        <select
+                            key="hasMog"
+                            defaultValue={selectedOptions.hasMonogrammedSteeringWheelCover
+                            ? selectedOptions.hasMonogrammedSteeringWheelCover
+                            : ""}
+                            onChange={(e) => this.mogOnhandler(e, setProductOption)}>
+                            <option value=""></option>
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
                         </select>
