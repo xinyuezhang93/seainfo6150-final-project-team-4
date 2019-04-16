@@ -31,7 +31,7 @@ class Header extends Component {
             <div id = 'popup1' className = {styles.overlay}>
             <div className = {styles.popup}>
                 {viewedProducts.length === 0 ? <h1>Welcome!</h1>: <h2 className={styles.Title}>Viewed Products</h2>}
-                <ViewedProducts
+                <ViewedProducts className = {styles.vpdiv}
                     categories={categories}
                     products={
                     viewedProducts
@@ -49,7 +49,6 @@ class Header extends Component {
   
     Header.propTypes = {
       categories: PropTypes.object.isRequired,
-      allproducts: PropTypes.array.isRequired
     };
 
 export default Header;
