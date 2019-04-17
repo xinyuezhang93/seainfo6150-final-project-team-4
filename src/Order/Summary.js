@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {Redirect} from "react-router-dom";
 import classes from './Summary.module.css';
-import Header from './../public/Header';
 import TotalPrice from "./TotalPrice";
 import CarOptions from './CarOptions';
 import UserOptions from './UserOptions';
@@ -23,6 +22,10 @@ class Summary extends Component {
         this.setState({submittedSuccessfully: true});
     }
 
+    print(){
+        window.print();
+    }
+
     render() {
         const {options, products, selectedOptions, selectedProductId, userInfo} = this.props;
 
@@ -30,7 +33,6 @@ class Summary extends Component {
             ? (<Redirect to="/order/thank-you"/>)
             : (
                 <div>
-                    <Header/>
                     <form
                         onSubmit={this
                         .handleSubmit
@@ -48,8 +50,10 @@ class Summary extends Component {
                                     .keys(selectedOptions)
                                     .map((option) => {
                                         const originalOption = options[option];
-                                        const selectedValue = selectedOptions[option] === true ? "Yes" : selectedOptions[option];
-                                        return (<CarOptions name={originalOption.name} value={selectedValue}/>);
+                                        const selectedValue = selectedOptions[option] === true
+                                            ? "Yes"
+                                            : selectedOptions[option];
+                                        return (<CarOptions key = {originalOption.name} name={originalOption.name} value={selectedValue}/>);
                                     })
 }
                             </ul>
@@ -58,7 +62,7 @@ class Summary extends Component {
                             <ul>
                                 {Object
                                     .keys(userInfo)
-                                    .map((info) => (<UserOptions name={info} value={userInfo[info]}/>))
+                                    .map((info) => (<UserOptions key = {info} name={info} value={userInfo[info]}/>))
 }
                             </ul>
                         </div>
@@ -66,6 +70,7 @@ class Summary extends Component {
                             options={options}
                             product={products[selectedProductId]}
                             selectedOptions={selectedOptions}/>
+                        <input className={classes.submit} onClick = {() => this.print()} type="button" value="print"/>
                         <input className={classes.submit} type="submit" value="Submit order"/>
                     </form>
                     <Footer/>

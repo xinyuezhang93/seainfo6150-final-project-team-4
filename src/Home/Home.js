@@ -9,15 +9,19 @@ let Data = require('./../data/categories.json');
 
 const Home = () => (
     <div className ={classes.background_image}>
-        <Header />
         <div>
+        
             <h3 className = {classes.slogan}>Get the TruePrice—the Actual Price You Will Pay at the Dealership.</h3>
+            <a href = "#car-category">
             <img className = {classes.main_picture}
                 src={mainPhoto}
                 alt="Main Picture"/>
-            <h3 className = {classes.slogan}>Shopping for a Car? Choose a Type</h3>
+            </a>
         </div>
-        <ul className={classes.wrapping}>
+        <div id="car-category">
+        <h3 className = {classes.slogan}>Shopping for a Car? Choose a Type</h3>
+        <div className={classes.wrapping}>
+        
             {// this iterates through the articles JSON and calls your ArticleListItem
             // component for each article
             Object
@@ -25,7 +29,8 @@ const Home = () => (
                 .map(data => {
                     return <Car key={data.id} name={data.id} imgSrc={data.img.sm}/>
                 })}
-        </ul>
+        </div>
+        </div>
         <Footer />
     </div>
 );

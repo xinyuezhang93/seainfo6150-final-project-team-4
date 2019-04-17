@@ -9,7 +9,7 @@ body {
     height: 100%;
 }
 
-.inputmargin{
+.inputmargin {
     margin-left: 5px;
 }
 
@@ -26,7 +26,6 @@ body {
     margin-top: 200px;
     width: 100%;
     height: 500px;
-    /*高度可由内容撑开*/
     min-height: calc(100% - 50px);
 }
 
@@ -40,14 +39,14 @@ body {
 
 .route1 {
     color: peru;
-    font-size: 15px;
+    font-size: 2rem;
     width: 25%;
     padding-bottom: 10px;
 }
 
 .route12 {
     color: peru;
-    font-size: 25px;
+    font-size: 2.5rem;
     width: 25%;
     padding-bottom: 10px;
     border-bottom: 2px solid salmon;
@@ -55,7 +54,8 @@ body {
 
 .choosen {
     margin-top: 10%;
-    margin-left: 35%;
+    margin-left: 25%;
+    font-size: 2.2rem;
 }
 
 .wrapping {
@@ -66,13 +66,25 @@ body {
 .submit {
     margin-top: 50px;
     margin-left: -180px;
-    width: 300px;
-    height: 60px;
+    width: 30%;
+    height: 10%;
     background-color: orange;
     color: white;
     border-radius: 20em;
     font-size: 1.5em;
 }
+
+.back{
+    margin-top: 50px;
+    margin-left: 180px;
+    width: 30%;
+    height: 10%;
+    background-color: orange;
+    color: white;
+    border-radius: 20em;
+    font-size: 1.5em;
+}
+
 .submit:hover {
     background-color: #ffc06c;
 }
@@ -94,85 +106,18 @@ body {
 }
 
 .imgLeft {
-    width: 45%;
+    width: 48%;
 }
 
 .imgLeft img {
     margin-top: 0;
-    width: 600px;
-    height: 400px;
-}
-
-.colorRed {
-    border: 2px solid #e5e5e5;
-    border-radius: 50%;
-    height: 2.0rem;
-    width: 2.0rem;
-    background-color: red;
-    margin-left: 5px;
-    color: red;
-    cursor: grab;
-}
-
-.colorGreen {
-    border: 2px solid #e5e5e5;
-    border-radius: 50%;
-    height: 2.0rem;
-    width: 2.0rem;
-    background-color: Green;
-    color: Green;
-    margin-left: 5px;
-    cursor: grab;
-}
-
-.colorBlack {
-    border: 2px solid #e5e5e5;
-    border-radius: 50%;
-    height: 2.0rem;
-    width: 2.0rem;
-    background-color: black;
-    color: black;
-    margin-left: 5px;
-    cursor: grab;
-}
-
-.colorGray {
-    border: 2px solid #e5e5e5;
-    border-radius: 50%;
-    height: 2.0rem;
-    width: 2.0rem;
-    background-color: grey;
-    color: grey;
-    margin-left: 5px;
-    cursor: grab;
-}
-
-.colorTan {
-    border: 2px solid #e5e5e5;
-    border-radius: 50%;
-    height: 2.0rem;
-    width: 2.0rem;
-    background-color: tan;
-    color: tan;
-    margin-left: 5px;
-    cursor: grab;
-}
-
-.colorMaroon {
-    border: 2px solid #e5e5e5;
-    border-radius: 50%;
-    height: 2.0rem;
-    width: 2.0rem;
-    background-color: maroon;
-    color: maroon;
-    margin-left: 5px;
-    cursor: grab;
+    width: 80%;
+    height: 75%;
 }
 
 .modalnone {
     display: none;
     position: relative;
-
 }
 
 .modalon {
@@ -191,14 +136,4 @@ body {
     margin-left: auto;
     margin-right: auto;
     z-index: 999;
-}
-
-.back {
-    margin-top: 50px;
-    width: 100px;
-    height: 50px;
-    background-color: orange;
-    color: white;
-    border-radius: 20em;
-    font-size: 1.5em;
 }

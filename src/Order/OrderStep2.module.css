@@ -6,6 +6,7 @@
     color:white;
     border-radius: 20em;
     font-size: 1.5em;
+    cursor: pointer;
 }
 
 .submit:hover {
@@ -43,6 +44,10 @@ img {
     margin-top: 10px;
 }
 
+.block > label{
+    font-size: 15px;
+}
+
 .InputText {
     outline: none;
     border: 1px solid #ccc;
@@ -62,19 +67,17 @@ img {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-  
-  
     padding: 10px;
     padding-bottom: 50px;
     box-sizing: border-box;
 }
 
 .imgLeft{
-    width: 45%;
+    width: 48%;
 }
 
 .imgLeft img{
-    margin-top:0px;
-    width: 600px;
-    height: 400px;
+    margin-top: 0;
+    width: 80%;
+    height: 46.39%;
 }

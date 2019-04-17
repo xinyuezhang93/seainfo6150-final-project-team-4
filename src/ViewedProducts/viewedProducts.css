@@ -1,7 +1,8 @@
 .viewed-items-section {
 	display: inline-flex;
-	width: 10%;
-	margin: 5%;
+	width: 16%;
+	margin: 2%;
+	
 }
 .viewed-items-link:hover {
 	border-style: solid;
@@ -10,9 +11,16 @@
 }
 .viewed-product-image {
 	width: 100%;
-	height: 100%;
+	/* height: 100%; */
 }
+
 @media screen and (max-width: 450px) {
+	.viewed-items-section {
+		display: flex;
+		width: 30%;
+		margin: 2%;
+	}
+
 }
 
 @media screen and (max-width: 900px) and (min-width: 450px) {

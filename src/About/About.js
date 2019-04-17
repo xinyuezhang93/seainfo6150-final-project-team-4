@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './About.module.css';
-
+import Footer from '../public/Footer';
 const About = () => (
     <div>
 
@@ -46,6 +46,7 @@ const About = () => (
                 vision every day with their ingenuity and collaborative spirit.
             </p>
         </div>
+        <Footer/>
 
     </div>
 
