@@ -244,7 +244,6 @@ class OrderStep2 extends Component {
                                 </div>
 
                                 <input
-                                    disabled={!(this.state.cellisValid && this.state.phoneisValid)}
                                     className={classes.submit}
                                     type="submit"
                                     value="Go to Summary"/>
