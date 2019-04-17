@@ -2,21 +2,21 @@
 	width: 60%;
 	float:inherit;
 	margin:2%;
-  height:500px;
+  height:auto;
 
 }
 .Team_part img {
 	width: 60%;
 	float:inherit;
 	margin:2%;
-  height:400px;
+  height:auto;
 
 }
 .Careers_part img {
 	width: 60%;
 	float:inherit;
 	margin:2%;
-  height:400px;
+  height:auto;
 
 }
 
@@ -28,6 +28,7 @@
   border:1px,solid,#F5F5F5;
   width:60%;
   height:auto;
+	text-align: left;
 
 }
 .Team_part p {
@@ -38,6 +39,7 @@
   border:1px,solid,#F5F5F5;
   width:60%;
   height:auto;
+	text-align: left;
 
 }
 .Careers_part p {
@@ -48,4 +50,5 @@
   border:1px,solid,#F5F5F5;
   width:60%;
   height:auto;
+	text-align: left;
 }
