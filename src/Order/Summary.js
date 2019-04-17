@@ -8,7 +8,6 @@ import UserOptions from './UserOptions';
 import Footer from '../public/Footer';
 
 let categories = require('./../data/categories.json')
-let products = require('./../data/products.json');
 
 class Summary extends Component {
     constructor(props) {

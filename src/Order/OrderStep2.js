@@ -52,7 +52,7 @@ class OrderStep2 extends Component {
     }
 
     checkMobile(e, setUserInfo) {
-        if (e.target.value == "") {
+        if (e.target.value === "") {
             alert("Phone number can not be null");
         } else {
             var re = /\d{10}$/
@@ -66,7 +66,7 @@ class OrderStep2 extends Component {
     }
 
     checkZip(e, setUserInfo) {
-        if (e.target.value == "") {
+        if (e.target.value === "") {
             alert("Zip code can not be null");
         } else {
             var re = /\d{5}$/
@@ -80,7 +80,7 @@ class OrderStep2 extends Component {
     }
 
     checkBillingZip(e, setUserInfo) {
-        if (e.target.value == "") {
+        if (e.target.value === "") {
             alert("Zip code can not be null");
         } else {
             var re = /\d{5}$/
@@ -93,7 +93,7 @@ class OrderStep2 extends Component {
     }
 
     checkCell(e, setUserInfo) {
-        if (e.target.value == "") {
+        if (e.target.value === "") {
             alert("Cell number can not be null");
         } else {
             var re = /\d{10}$/
@@ -107,7 +107,7 @@ class OrderStep2 extends Component {
     }
 
     render() {
-        const {options, selectedProductId, setUserInfo} = this.props;
+        const {selectedProductId, setUserInfo} = this.props;
 
         let billingAddress1 = (this.state.billingAddress === false)
             ? <div>

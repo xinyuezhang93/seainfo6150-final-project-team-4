@@ -33,17 +33,17 @@ class OrderStep1 extends Component {
     }
 
     purchaseHandler1 = (selectedOptions) => {
-        if (selectedOptions.color == undefined) {
+        if (selectedOptions.color === undefined) {
             alert("Color must be selected")
-        } else if (selectedOptions.interiorFabricColor == undefined) {
+        } else if (selectedOptions.interiorFabricColor === undefined) {
             alert("intColor must be selected")
-        } else if (selectedOptions.dashboardColor == undefined) {
+        } else if (selectedOptions.dashboardColor === undefined) {
             alert("dashColor must be selected")
-        } else if (selectedOptions.numSeats == undefined) {
+        } else if (selectedOptions.numSeats === undefined) {
             alert("seats must be selected")
-        } else if (selectedOptions.numExhausts == undefined) {
+        } else if (selectedOptions.numExhausts === undefined) {
             alert("exhausts must be selected")
-        } else if (selectedOptions.engine == undefined) {
+        } else if (selectedOptions.engine === undefined) {
             alert("engine must be selected")
         } else {
             this.setState({now: 2});
@@ -51,9 +51,9 @@ class OrderStep1 extends Component {
     }
 
     purchaseHandler2 = (selectedOptions) => {
-        if (selectedOptions.hubcapsMaterial == undefined) {
+        if (selectedOptions.hubcapsMaterial === undefined) {
             alert("Material must be selected")
-        } else if (selectedOptions.spareTire == undefined) {
+        } else if (selectedOptions.spareTire === undefined) {
             alert("sparetile must be selected")
         } else {
             this.setState({now: 3});
@@ -61,9 +61,9 @@ class OrderStep1 extends Component {
     }
 
     purchaseHandler3 = (selectedOptions) => {
-        if (selectedOptions.dashboardLightsColor == undefined) {
+        if (selectedOptions.dashboardLightsColor === undefined) {
             alert("dashBoardLightColor must be selected")
-        } else if (selectedOptions.floormatsColor == undefined) {
+        } else if (selectedOptions.floormatsColor === undefined) {
             alert("floormatsColor must be selected")
         } else {
             this.setState({now: 4});
