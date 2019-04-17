@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {Redirect} from "react-router-dom";
 import classes from './OrderStep1.module.css'
-import Header from './../public/Header';
 import Footer from '../public/Footer';
 import HoodOrnament from './HoodOrnament';
 import Monkey from './Monkey';

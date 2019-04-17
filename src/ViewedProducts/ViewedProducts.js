@@ -14,7 +14,7 @@ const ViewedProducts = ({ categories, products }) => {
 					<Link
 						className="viewed-items-link"
 						to={`/products/${category.id}/${product.id}`}>
-						<img className="viewed-product-image" src={category.img.sm} />
+						<img className="viewed-product-image" src={category.img.sm} alt = {product.id} />
 						<p>{product.title}</p>
 					</Link>
 				</div>

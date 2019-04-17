@@ -22,7 +22,7 @@ class Header extends Component {
                 </Link>
               <div className = {styles.boxes}>
                 <Link to={`/products`} className = {styles.products}>
-                  Products
+                Products
                 </Link></div>
                 <div className = {styles.boxes}>
                 <a className = {styles.button} href="#popup1">Recently Viewed</a></div>
@@ -31,7 +31,7 @@ class Header extends Component {
             <div id = 'popup1' className = {styles.overlay}>
             <div className = {styles.popup}>
                 {viewedProducts.length === 0 ? <h1>Welcome!</h1>: <h2 className={styles.Title}>Viewed Products</h2>}
-                <ViewedProducts
+                <ViewedProducts className = {styles.vpdiv}
                     categories={categories}
                     products={
                     viewedProducts
@@ -48,7 +48,7 @@ class Header extends Component {
   }
   
     Header.propTypes = {
-      categories: PropTypes.object.isRequired
+      categories: PropTypes.object.isRequired,
     };
 
 export default Header;

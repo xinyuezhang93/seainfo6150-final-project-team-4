@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {Redirect} from "react-router-dom";
 import classes from './OrderStep2.module.css';
-import Header from './../public/Header';
 import Footer from '../public/Footer';
 let categories = require('./../data/categories.json')
 let products = require('./../data/products.json');

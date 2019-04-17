@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './thankyou.png';
 import {Link} from 'react-router-dom';
 import classes from './ThankYou.module.css';
+import Footer from '../public/Footer';
 
 const ThankYou = () => (
     <div>
@@ -11,7 +12,7 @@ const ThankYou = () => (
         <Link to={`/`}>
             <button className = {classes.submit} type="button">Back to Home page</button>
         </Link>
-
+        <Footer />
     </div>
 );
 
