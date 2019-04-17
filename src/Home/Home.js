@@ -9,7 +9,6 @@ let Data = require('./../data/categories.json');
 const Home = () => (
     <div className ={classes.background_image}>
         <div>
-        
             <h3 className = {classes.slogan}>Get the TruePrice—the Actual Price You Will Pay at the Dealership.</h3>
             <a href = "#car-category">
             <img className = {classes.main_picture}
