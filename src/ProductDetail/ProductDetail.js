@@ -72,7 +72,6 @@ class ProductDetail extends PureComponent {
 					onClick={selectProductId.bind(null, product.id)}>
 					Place an order today
 				</Link> : null}
-					
 				</div>
 				{/* end order button */}
 			</div>

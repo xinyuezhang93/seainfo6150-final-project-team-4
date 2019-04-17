@@ -39,14 +39,14 @@ class Header extends Component {
                     .map(productId => allProducts[productId])
                     }
                 />
-                <a className={styles.close} href="#">&times;</a>
+                <a className={styles.close} href="#1">&times;</a>
             </div>
             </div> 
             <div id = 'categories1' className = {styles.overlay}>
             <div className = {styles.popup}>
                 <h2>Categories</h2>    
                 <Categories categories={Object.values(categories)}/>
-                <a className={styles.close} href="#">&times;</a>
+                <a className={styles.close} href="#1">&times;</a>
             </div>
             </div>
             
