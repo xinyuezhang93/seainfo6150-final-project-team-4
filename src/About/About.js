@@ -8,7 +8,7 @@ const About = () => (
             <h2>About Us</h2>
             <img
                 src="https://di-uploads-development.dealerinspire.com/daviddodge/uploads/2018/03/Homepage-Hero.jpg"
-                alt="Company Picture"/>
+                alt="Company"/>
             <p>The car home provides car owners with a comprehensive, accurate and fast
                 one-stop service for all aspects of car selection, car purchase, car use, and
                 car change. The car home is committed to empowering users and customers through
@@ -23,7 +23,7 @@ const About = () => (
             <h2>Our Teams</h2>
             <img
                 src="https://www.dynamarkmonitoring.com/wp-content/uploads/2014/09/Build-A-Team-4.4.2.06.jpg"
-                alt="Team Picture"/>
+                alt="Team"/>
             <p>The professional evaluation team of the car home website was established in
                 2005. The team consists of automotive professional media practitioners and
                 professional drivers. The test pursues the principle of “professional, objective
@@ -38,7 +38,7 @@ const About = () => (
             <h2>Careers</h2>
             <img
                 src="https://www.crh.org/images/default-source/default-album/find-a-career-650.png?sfvrsn=0"
-                alt="Career Picture"/>
+                alt="Career"/>
             <p>Dreamers Wanted:<br/>
                 We exist to be the most transparent brand in automotive, to serve as a catalyst
                 that dramatically improves the way people discover, buy, and sell cars. Our

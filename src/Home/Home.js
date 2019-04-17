@@ -14,7 +14,7 @@ const Home = () => (
             <a href = "#car-category">
             <img className = {classes.main_picture}
                 src={mainPhoto}
-                alt="Main Picture"/>
+                alt="Main"/>
             </a>
         </div>
         <div id="car-category">

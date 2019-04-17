@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import styles from './Header.module.css';
-import PropTypes from 'prop-types';
 import ViewedProducts from '../ViewedProducts/ViewedProducts.js';
 import { Link } from 'react-router-dom';
-import { SyncWaterfallHook } from 'tapable';
 import Categories from '../Categories/Categories';
 
 class Header extends Component {

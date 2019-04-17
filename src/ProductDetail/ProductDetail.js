@@ -66,12 +66,13 @@ class ProductDetail extends PureComponent {
 					<div className="product-description">{product.description}</div>
 
 					{/* start order button */}
-					<Link
-						className="product-order-action"
-						to="/order/1"
-						onClick={selectProductId.bind(null, product.id)}>
-						Place an order today
-					</Link>
+					{availability === 'Yes' ? <Link
+					className="product-order-action"
+					to="/order/1"
+					onClick={selectProductId.bind(null, product.id)}>
+					Place an order today
+				</Link> : null}
+					
 				</div>
 				{/* end order button */}
 			</div>
