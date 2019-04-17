@@ -669,14 +669,14 @@ class OrderStep1 extends Component {
                     </div>
                     <input
                         className={classes.submit}
-                        onClick={() => this.purchaseHandler2(selectedOptions)}
-                        type="button"
-                        value="Next"/>
-                    <input
-                        className={classes.back}
                         onClick={this.gobackHandler1}
                         type="button"
                         value="Back"/>
+                    <input
+                        className={classes.back}
+                        onClick={() => this.purchaseHandler2(selectedOptions)}
+                        type="button"
+                        value="Next"/>
 
                 </div>;
                 break;
@@ -745,15 +745,15 @@ class OrderStep1 extends Component {
                     </div>
                     <input
                         className={classes.submit}
-                        onClick={() => this.purchaseHandler3(selectedOptions)}
-                        type="button"
-                        value="Next"/>
-
-                        <input
-                        className={classes.back}
                         onClick={this.gobackHandler2}
                         type="button"
                         value="Back"/>
+
+                    <input
+                        className={classes.back}
+                        onClick={() => this.purchaseHandler3(selectedOptions)}
+                        type="button"
+                        value="Next"/>
                 </div>;
                 break;
             case 4:
@@ -790,12 +790,12 @@ class OrderStep1 extends Component {
                         </select>
                         {mogInput}
                     </div>
-                    <input className={classes.submit} type="submit" value="Go to Step2  "/>
                     <input
-                        className={classes.back}
-                        onClick={this.gobackHandler3}
+                        className={classes.submit}
                         type="button"
+                        onClick={this.gobackHandler3}
                         value="Back"/>
+                    <input className={classes.back} type="submit" value="Go to step2"/>
                 </div>;
                 break;
             default:
