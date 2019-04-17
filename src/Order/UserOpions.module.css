@@ -1,15 +1,13 @@
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
 }
 
-.lii {
-    font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+li {
+	font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
 }
 
-.lii:hover {
-    font-size: 25px;
-    background: #ffc06c;
-}
+li:hover {
+	font-size: 25px;
 

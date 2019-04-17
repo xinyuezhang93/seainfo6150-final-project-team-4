@@ -26,7 +26,11 @@ class ProductDetail extends PureComponent {
 			<div className="product-detail-section">
 				<div>
 					<div className="product-important-details">{product.title}</div>
-					<img className="product-detailed-image" src={category.img.lg} />
+					<img
+						className="product-detailed-image"
+						src={category.img.lg}
+						alt="product"
+					/>
 				</div>
 				<div className="product-pricing-details">
 					<div>
