@@ -48,8 +48,7 @@ class Header extends Component {
   }
   
     Header.propTypes = {
-      categories: PropTypes.object.isRequired,
-      allproducts: PropTypes.array.isRequired
+      categories: PropTypes.object.isRequired
     };
 
 export default Header;

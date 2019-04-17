@@ -72,8 +72,19 @@ body {
     color: white;
     border-radius: 20em;
     font-size: 1.5em;
-    cursor: pointer;
 }
+
+.back{
+    margin-top: 50px;
+    margin-left: 180px;
+    width: 300px;
+    height: 60px;
+    background-color: orange;
+    color: white;
+    border-radius: 20em;
+    font-size: 1.5em;
+}
+
 .submit:hover {
     background-color: #ffc06c;
 }

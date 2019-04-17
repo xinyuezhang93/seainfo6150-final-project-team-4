@@ -4,11 +4,11 @@ ul {
     padding: 0;
 }
 
-li {
+.lii {
     font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
 }
 
-li:hover {
+.lii:hover {
     font-size: 25px;
     background: #ffc06c;
 }

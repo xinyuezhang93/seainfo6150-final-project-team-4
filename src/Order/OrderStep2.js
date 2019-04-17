@@ -214,7 +214,7 @@ class OrderStep2 extends Component {
                                         id="scales"
                                         name="scales"
                                         onChange={() => this.billingHandler()}/>
-                                    <label for="scales">Billing Address same as shipping address</label>
+                                    <label htmlFor="scales">Billing Address same as shipping address</label>
                                 </div>
                                 {billingAddress1}
                                 <div className={classes.block}>
