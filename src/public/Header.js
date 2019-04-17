@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import ViewedProducts from '../ViewedProducts/ViewedProducts.js';
 import { Link } from 'react-router-dom';
 import { SyncWaterfallHook } from 'tapable';
+import Categories from '../Categories/Categories';
 
 class Header extends Component {
     render() {
@@ -26,6 +27,8 @@ class Header extends Component {
                 </Link></div>
                 <div className = {styles.boxes}>
                 <a className = {styles.button} href="#popup1">Recently Viewed</a></div>
+                <div className = {styles.boxes}>
+                <a className = {styles.button} href="#categories1">Categories</a></div>
             </div>
 
             <div id = 'popup1' className = {styles.overlay}>
@@ -39,16 +42,20 @@ class Header extends Component {
                     }
                 />
                 <a className={styles.close} href="#">&times;</a>
-
             </div>
             </div> 
+            <div id = 'categories1' className = {styles.overlay}>
+            <div className = {styles.popup}>
+                <h2>Categories</h2>    
+                <Categories categories={Object.values(categories)}/>
+                <a className={styles.close} href="#">&times;</a>
+            </div>
+            </div>
+            
         </div>
-      )
+      );
     }
   }
   
-    Header.propTypes = {
-      categories: PropTypes.object.isRequired,
-    };
 
 export default Header;
