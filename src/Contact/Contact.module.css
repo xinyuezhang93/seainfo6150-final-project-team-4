@@ -102,4 +102,7 @@
       text-align: center;
   }
 
-  
+  .contact_about {
+      color: black;
+      text-decoration: underline;
+  }

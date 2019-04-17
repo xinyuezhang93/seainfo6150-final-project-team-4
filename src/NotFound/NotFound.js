@@ -10,7 +10,6 @@ const NotFound = () => (
     <br></br>
     Or have a rest here.</h2></div>
     <div className = {styles.background_image}></div>
-    
   </div>
 );
 

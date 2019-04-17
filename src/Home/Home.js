@@ -2,7 +2,6 @@ import React from 'react';
 import classes from './Home.module.css';
 import Car from './Car';
 import mainPhoto from './mainPhoto.png';
-import Header from './../public/Header';
 import Footer from '../public/Footer';
 let Data = require('./../data/categories.json');
 
